@@ -37,11 +37,11 @@ When your only tool is a hammer, then everything is a nail. When one model won't
 
 $$ Y = const + \beta X + \epsilon $$
 
-where $\epsilon$ is a random variable accounting the error between the data and values predicted by the equation. While $const, \beta$ are parameters estimated by an optimisation process to ensure the equation fits the data as neatly as possible. In the below graph we have a series characterised by change. After the first shock we can refit the model so that the line tracks well with the evolving data. After the second shock we try another refit, but the range the and variance of the data makes our basic model a poor fit. This presents three examples of error in the modelling process: (i) forecasts fail for the reason that's it's also difficult to identify (in the moment) those changepoints in the data which reflect structural change, (ii)  the fundamental assumptions that go into the model are sound, but the parameters need be re-estimated based on the new data
+\noindent where $\epsilon$ is a random variable representing the error. A modest notational device for disaster. While $const, \beta$ are parameters estimated by an optimisation process to ensure the equation fits the data as neatly as possible, assuming some degree of error. In the below graph we have a series characterised by change. After the first shock we can refit the model so that the line tracks well with the evolving data. After the second shock we try another refit, but the range the and variance of the data makes our basic model a poor fit. This presents three examples of error in the modelling process: (i) forecasts fail for the reason that's it's also difficult to identify (in the moment) those changepoints in the data which reflect structural change, (ii)  the fundamental assumptions that go into the model are sound, but the parameters need be re-estimated based on the new data
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{./Plots/piecewise_linear_fits.png}
 \end{figure}
-and (iii) the third linear model is simply a terrible match for the pattern in the data. In practice you never really know whether a new error stems from a misfit but appropriate model or an entirely inappropriate model. As we increase our number of sample fits we hope to better approximate the true linear process (if any) generating the data. This warrants a note about errors. Imagine now that the data points on our previous graph are repeatedly re-speckled over the canvas. We can refit a new model for each set of scattered data points and each refit gives us a new sample values for $ const, \beta$. If the underlying data generating process is stable, then on average the parameter fits will converge to the characteristics of the stable process\footnote{the correct values of $const, \beta$. For example if the we're predicting height based on weight, our values for $const$ should be above 4.ft and the value for $\beta$ should be calibrated to make up the average difference when multiplying the value for weight.} Our sample estimates will overshoot in some cases but on the whole the errors up and down will cancel each other out if the errors themselves are normally distributed and the expected realisation of the error $\epsilon$ term is 0. Forecasting with the expected parameters derived from our sampling distribution minimises our forecast errors. These are assumptions required for a process to exhibit the tendency of regression towards the mean. 
+and (iii) the third linear model is simply a terrible match for the pattern in the data. In practice you never really know whether a new error stems from a misfit but appropriate model or an entirely inappropriate model. But as we increase our number of sample fits we hope to better approximate the true linear process (if any) generating the data. This warrants a note about errors. Imagine now that the data points on our previous graph are repeatedly re-speckled over the canvas. We can refit a new model for each set of scattered data points and each refit gives us a new sample values for $ const, \beta$. If the underlying data generating process is stable, then the parameter fits will converge to the characteristics of the stable process\footnote{The correct values of $const, \beta$. For example if the we're predicting height based on weight, our values for $const$ should be above 4.ft and the value for $\beta$ should be calibrated to make up the average difference when multiplying the value for weight.} Our sample estimates will overshoot in some cases but on the whole the errors up and down will cancel each other out if the errors themselves are normally distributed and the expected realisation of the error $\epsilon$ term is 0. Forecasting with the expected parameters derived from our sampling distribution minimises our forecast errors because the fluctuations are stable about the centre. These are assumptions required for a process to exhibit the tendency of regression towards the mean. 
 
 The code below builds two sampling distributions based on different underlying processes.  One in which the errors are independent, normally distributed around 0 the other in which the errors are correlated in a sine-wave like pattern, increasing and decreasing periodically. This is akin to difference between measuring error when predicting the heights of randomly sampled people versus predicting the sales volumes on randomly selected days of the week. A random sample of daily sales  risks clumping weekends together and skewing the expected values. No such risk exists when sampling from independent individuals. 
 
@@ -58,10 +58,11 @@ np.sin(np.linspace(0, 5*np.pi, N))**2 +
 np.sin(np.linspace(1, 6*np.pi, N))**2
 
 Y_corr = -2 + 3.5 * X + corr_err
+
 Y = -2 + 3.5 * X + independent_err
+
 population = pd.DataFrame({'X': X,
- 'Y': Y, 
-'Y_corr': Y_corr})
+ 'Y': Y, 'Y_corr': Y_corr})
 
 ### Sample from Data 
 ### and build smaller models
@@ -96,11 +97,29 @@ fits.boxplot()
 
 In the case with independent errors the expected value for our parameter estimates match almost exactly the true values of the process. In the second model with correlated errors the parameter estimate for our constant is 4.9 which is significantly different from the true value of -2, and will lead to systematically skewed predictions.
 
-\subsubsection*{Small World of the Model}
-When does it make sense to use models? In what sense should expected values guide our action? These are questions which arise in any sustained investigation of a random process. From where do we estimate the values for $$p_{i} : 1 \leq i \leq k$$ in the formula $(EV)$ if models are mere heuristics. Models are deliberate simplifications of complexity, a toy version of the world. Recent innovations of in machine learning means that we can fit models with hundreds, thousands and even billions of parameters but this increase scale does not change fact that models are blind to all factors outside their samples. A good model predicts the variance in future data, in part, by ignoring the genuine complexity of reality.  This is the only practical test that matters. If the prediction accuracy holds over successive periods we should become increasingly sure that the probabilities in our model are a good measure of risk. But we can never be certain the model holds over all successive periods and is robust to changes in external factors. We can however quantify the degree of uncertainty in the model by observing the spread of the sampling distribution.
+\subsection*{Small World of the Model}
+Prediction precedes probability in the order of analysis. Without a reliable regularity underwriting our observations, we interpret them as timorous noise. Only when there is a better than arbitrary correlation between $X, Y$ will we even think to ascribe a measurable probability to their association. Whether we view probabilities as a measure of credibility or frequency, the focus is always on a process which in reality reveals a pattern under repetition. 
+\newline 
 
-\subsubsection*{Styles of Inference}
-Prediction precedes probability in the order of analysis. Without a reliable regularity underwriting our observations, we assume them to be noise. Only when there is a better than arbitrary correlation between $X, Y$ will we even think to ascribe a measurable probability to their association. It's at this point that we can debate the finer points of statistical inference.
+\noindent So when does it make sense to use models? In what sense should expected values guide our action? These are questions which arise in any sustained investigation of a random process. If models are mere heuristics, from where do we pluck the values for $$p_{i} : 1 \leq i \leq k$$ in the formula $(EV)$.Models are deliberate simplifications of complexity, a toy version of the world. While recent innovations of in machine learning means that we can fit models with hundreds, thousands and even billions of parameters but this increase scale does not change fact that models are blind to all factors outside their samples. A good model predicts the variance in future data, in part, by ignoring the genuine complexity of reality. This is the only practical test that matters. If the prediction accuracy holds over successive periods we should become increasingly sure that the probabilities in our model are a good measure of risk. But we can never be certain the model holds over all successive periods and is robust to changes in external factors. We can however quantify the degree of uncertainty in the model by observing the spread of the sampling distribution. It's at this point that we can debate the finer points of statistical inference. 
+
+\subsubsection*{Inference from Expected Frequency}
+If you count the number heads in a series of successive coin flips, you'll arrive a proportion which characterises that process. If it's a fair coin roughly half of your sample will be heads. If the coin is weighted you might have as few as 0. This is the binomial distribution, and it really shine when you're trying to gauge fairness. If a process is biased, the distribution will be skewed. We can use this fact for inference. Consider a dispute over whether the game was rigged. 
+$$ H_0 : \text{ proportion of heads } = 0.10 $$
+$$ H_1 : \text{ proportion of heads } =  0.5 $$
+
+\noindent Take $(H0)$ as given then if we observe a sequence $H, T, T, T, T$ you might think we're being hustled. The pattern of reasoning is straightforward (i) make some assumptions about the random process under investigation, (ii) tease out the consequences of these assumptions (iii) evaluate the incoming data to see if you need to revise your assumptions. 
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{./Plots/binomial_test.png}
+\end{figure}
+
+In this instance there is significantly greater than 5\% chance of observing the above sequence so we do not have sufficient reason to reject $(H0)$, and should spend our money elsewhere. 
+
+\subsubsection*{Inference from Prior Belief}
+On the other hand if we instead use probability to simply calibrate our beliefs, then we should be more explicit in our assessment of $(H0), (H1)$. Let's assume that our prior beliefs about whether the game is rigged is 50/50. Then we evaluate the two hypothesis using Bayes's rule for incorporating our prior belief and the data. 
+
+$$ p(H_{i} | Data) = \frac{p(H_{i})p(Data | H_{i})}{\sum_{i=1}^{i =K} p(H_{i})}$$
 
 
 
