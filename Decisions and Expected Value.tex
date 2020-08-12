@@ -98,28 +98,37 @@ fits.boxplot()
 In the case with independent errors the expected value for our parameter estimates match almost exactly the true values of the process. In the second model with correlated errors the parameter estimate for our constant is 4.9 which is significantly different from the true value of -2, and will lead to systematically skewed predictions.
 
 \subsection*{Small World of the Model}
-Prediction precedes probability in the order of analysis. Without a reliable regularity underwriting our observations, we interpret them as timorous noise. Only when there is a better than arbitrary correlation between $X, Y$ will we even think to ascribe a measurable probability to their association. Whether we view probabilities as a measure of credibility or frequency, the focus is always on a process which in reality reveals a pattern under repetition. 
+Prediction precedes probability in the order of analysis. Without a reliable regularity underwriting our observations, we interpret them as timorous noise. Only when there is a better than arbitrary correlation between $X, Y$ will we even think to ascribe a measurable probability to their association. Whether we view probabilities as a measure of credibility or frequency, the focus is always on a process which in reality reveals a pattern under repetition. We're loath to apply a probability model of any kind without some inductive evidence.
 \newline 
 
-\noindent So when does it make sense to use models? In what sense should expected values guide our action? These are questions which arise in any sustained investigation of a random process. If models are mere heuristics, from where do we pluck the values for $$p_{i} : 1 \leq i \leq k$$ in the formula $(EV)$.Models are deliberate simplifications of complexity, a toy version of the world. While recent innovations of in machine learning means that we can fit models with hundreds, thousands and even billions of parameters but this increase scale does not change fact that models are blind to all factors outside their samples. A good model predicts the variance in future data, in part, by ignoring the genuine complexity of reality. This is the only practical test that matters. If the prediction accuracy holds over successive periods we should become increasingly sure that the probabilities in our model are a good measure of risk. But we can never be certain the model holds over all successive periods and is robust to changes in external factors. We can however quantify the degree of uncertainty in the model by observing the spread of the sampling distribution. It's at this point that we can debate the finer points of statistical inference. 
+\noindent So when does it make sense to use models? In what sense should expected values guide our action? These are questions which arise in any sustained investigation of a random process. If models are mere heuristics, from where do we pluck the values for $$p_{i} : 1 \leq i \leq k$$ in the formula $(EV)$. Models are deliberate simplifications of complexity, a toy version of the world. While recent innovations of in machine learning means that we can fit models with hundreds, thousands and even billions of parameters but this increase scale does not change fact that models are blind to all factors outside their samples. A good model predicts the variance in future data, in part, by ignoring the genuine complexity of reality. This is the only practical test that matters. If the prediction accuracy holds over successive periods we should become increasingly sure that the probabilities in our model are a good measure of risk. But we can never be certain the model holds over all successive periods and is robust to changes in external factors. We can however quantify the degree of uncertainty in the model by observing the spread of the sampling distribution. It's at this point that we can debate the finer points of statistical inference. 
 
 \subsubsection*{Inference from Expected Frequency}
 If you count the number heads in a series of successive coin flips, you'll arrive a proportion which characterises that process. If it's a fair coin roughly half of your sample will be heads. If the coin is weighted you might have as few as 0. This is the binomial distribution, and it really shine when you're trying to gauge fairness. If a process is biased, the distribution will be skewed. We can use this fact for inference. Consider a dispute over whether the game was rigged. 
-$$ H_0 : \text{ proportion of heads } = 0.10 $$
+$$ H_0 : \text{ proportion of heads } = 0.4  $$
 $$ H_1 : \text{ proportion of heads } =  0.5 $$
 
-\noindent Take $(H0)$ as given then if we observe a sequence $H, T, T, T, T$ you might think we're being hustled. The pattern of reasoning is straightforward (i) make some assumptions about the random process under investigation, (ii) tease out the consequences of these assumptions (iii) evaluate the incoming data to see if you need to revise your assumptions. 
+\noindent Take $(H0)$ as given then if we observe a sequence $H, H, H, T, T$ consistent with $(H0)$ you might begin to think we're being hustled. The pattern of reasoning is straightforward (i) make some assumptions about the random process under investigation, (ii) tease out the consequences of these assumptions (iii) evaluate the incoming data to see if you need to revise your assumptions. 
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{./Plots/binomial_test.png}
 \end{figure}
 
-In this instance there is significantly greater than 5\% chance of observing the above sequence so we do not have sufficient reason to reject $(H0)$, and should spend our money elsewhere. 
+In this instance there is significantly greater than the traditional 5\% chance of observing the above sequence so we do not have sufficient reason to reject $(H0)$, and should spend our money elsewhere. 
 
 \subsubsection*{Inference from Prior Belief}
 On the other hand if we instead use probability to simply calibrate our beliefs, then we should be more explicit in our assessment of $(H0), (H1)$. Let's assume that our prior beliefs about whether the game is rigged is 50/50. Then we evaluate the two hypothesis using Bayes's rule for incorporating our prior belief and the data. 
 
-$$ p(H_{i} | Data) = \frac{p(H_{i})p(Data | H_{i})}{\sum_{i=1}^{i =K} p(H_{i})}$$
+$$ \overset{posterior}{p(H_{i} | Data)} = \frac{\overset{prior}{p(H_{i})}\overset{liklihood}{p(Data | H_{i})}}{\sum_{i=1}^{i =K} p(Data | H_{i})p(H_i)}$$
+
+where $ 1 \leq i \leq K$ spans the ways in which the data could have been realised. Then we have:
+
+$$ \frac{p(H_1 | 3 in 5)}{p(H_{0} | 3 in 5)} = \frac{\frac{.5\cdot .31}{.5\cdot .31 + .5 \cdot .23}}{\frac{.5\cdot .23}{.5\cdot .31 + .5 \cdot .23}} = \frac{.57}{.42} $$
+
+which would lead us to infer that the die was fair. 
+
+\subsubsection*{The Art of Inference}
+Neither analysis ends with these calculations, both would continue to probe the limits of each hypothesis. We'd have to consider things like sample size and sensitivity testing, model performance and cost of errors. The point is just that there are reasons for dispute. This is example shows the heart of the conflict between the dual aspect of probability. There is enough latitude in the manner in which we set up a probability model that the mathematics can yield apparently inconsistent results. The frequentist evaluation of our biased coin is very sensitive to the choice of hypotheses, while the Bayesian approach is influenced by the choice of prior. Why set up a significance test against assumed cheating rather than assumed fairness? Why attribute equal weight to both hypotheses? Both approaches come with baggage. 
 
 
 
