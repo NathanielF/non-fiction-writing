@@ -30,7 +30,7 @@ In the below plot we have fixed a Poisson distribution with a mean of 4.5 and ca
   \includegraphics[width=\linewidth]{./Plots/convergence_of_law_of_large_numbers.png}
   \caption{Convergence with large samples}
 \end{figure}
-\noindent  This is fundamental to the interpretation of probability. Given a game with fixed and fair odds we see that repeated play will converge because of characteristics which govern the process. Dice are the paradigm example.  In the wild we never know the characteristics which cause the observed spread of outcomes, but such is the influence of gambling on probability, that we assume a stable pattern to be gamed. Partially this is pragmatic. The maths is more tractable if we can assume a well behaved underlying process. The results are compelling. The Normal (Bell Curve) distribution, the Poisson distribution the Bernoulli distribution (to name a few) are all rightly famous. Their shapes are characteristics of innumerable random processes. But the paradigm clouds the fact that in practice we start on the left side of the law of large numbers (with samples) and we often start with small numbers. 
+\noindent  This is fundamental to the interpretation of probability. Given a game with fixed and fair odds we see that repeated play will converge because of characteristics which govern the process. Dice are the paradigm example.  In the wild we never know the characteristics which cause the observed spread of outcomes, but such is the influence of gambling on probability, that we assume there is a stable pattern to be gamed. Partially this is pragmatic. The maths is more tractable if we can assume a well behaved underlying process. The results are compelling. The Normal (Bell Curve) distribution, the Poisson distribution the Bernoulli distribution (to name a few) are all rightly famous. Their shapes are characteristics of innumerable random processes. But the paradigm clouds the fact that in practice we start on the left side of the law of large numbers (with samples) and we often start with small numbers. 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{./Plots/variety_of_distributions.png}
   \caption{Some theoretical distributions with parameters}
@@ -161,23 +161,23 @@ Assume the particular values for each plan then the expected value of customer j
   \caption{Abrupt increase in dropouts}
 \end{figure}
 
-What is the new expected value? From the frequentist point of view the macro distributional properties haven't significantly changed. But given what we know about the change to the website it would be foolish to assume such a static distributional assumption. Looking only at the small sample of new data, the variance will be large and the estimates of rates of signup for each plan will be unstable.  Following the Bayesian paradigm we can condition on our expectations on the new data, the old data or all the data we get slightly different results. 
+What is the new expected value? From the frequentist point of view the macro distributional properties haven't significantly changed. But given what we know about the change to the website it would be foolish to assume such a static distributional assumption. Looking only at the small sample of new data, the variance will be large and the estimates of rates of sign-up for each plan will be unstable.  Following the Bayesian paradigm we can condition on our expectations on the new data, the old data or all the data we get slightly different results. The below graph illustrates the spread in values expected revenue calculated on different slices of our data using Bayes Rule.
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{./Plots/expected_revenue_distributions.png}
   \caption{Expected revenue differs by choice of prior and data}
 \end{figure}
 
-Using a large number of observations, the influence of our priors are minimal and washed out by the data, giving us a strong point estimate with low variance stable around 8, but since the recent data involves a step change, we might be better off ignoring the old data. But we can also see that if we condition our expectations only on the new data with different priors drawn from the past data or hope, we can positively bias our expectations. 
+Using a large number of observations, the influence of our priors are minimal and washed out by the data, giving us a strong point estimate with low variance stable around 8.2, but since the recent data involves a step change, we might be better off ignoring the old data. But we can also see that if we condition our expectations only on the new data with different priors drawn from the past data or hope, we can positively bias our expectations. 
 
-The point here is that nearly all substantial decisions are made with small samples in circumstances where past behaviour is not a guide. Past behavioural patterns are exactly what we're trying to avoid or change. If you want to know whether the change on your website will drive a material change in financial revenue, you won't have long run patterns to rely on and it's an open question on how to weight the new data. 
+Nearly all substantial decisions are made with small samples in circumstances where past behaviour is not a guide. Past behavioural patterns are exactly what we're trying to avoid or change. If you want to know whether the change on your website will drive a material change in financial revenue, you won't have long run patterns to rely on and it's an open question on how to weight the new data. 
 
 \subsubsection*{Wither Expectation?}
 All models smuggle in a host of statistical assumptions and these can be range from reasonable to absurd. Even when reasonable they're only supported by large sample sizes, and most questions of interest are driven by novelty that short circuits appeal to robust patterns of history. 
 
 The weakness of the frequentist account of expected revenue is that it's not clear how probability even relates to small sample investigations, while the Bayesian can be charged with having poorly calibrated expectations based on small samples. The tension is that we'd like to make decisions with probability in mind, but in one case probability statements are not well defined and in the other we risk the bias of arbitrary priors. But this is a false dilemma. When the evidence is slim, your credence about objective chance is the best and only guide you have.
 
-In a domain which fetishizes certainty these gaps have been dramatised as failures. But the error is to make of statistics a monolith; although there is an arcane system of tools and symbols common across topics, no sample is large enough to address all questions you could ask.  Reasoning from small samples is common, best done with caution and plenty of caveats, but better reason than not. Expectations should be modified accordingly.
+A fetish for certainty dramatises these gaps as failures. But the error is to make of statistics monolith; although there is an arcane system of tools and symbols common across topics, no sample is large enough to address all questions you could ask. No analyst should ever be so secure in their models to masquerade as an oracle. Reasoning from small samples is common, best done with caution and plenty of caveats, but better reason than not. Expectations should be modified accordingly.
 
 \end{document}
 
