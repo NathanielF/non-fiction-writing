@@ -10,8 +10,12 @@
 
 \author{Nathaniel Forde}
 \title{Decision and Expected Value}
+
 \begin{document}
 
+\begin{abstract}
+\textit{The article examines the algorithm of expected value. Focusing first on how poor model design and the controversies about statistical inference can shape expected value, continuing on: \textbf{TODO} to discuss the role of expected value in the representation theorems in the foundations of statistics and the deployment of the latter in the welfare theorems of Economics. }
+\end{abstract}
 
 \section*{Expectations: The Workhorse}
 There is an algorithm beloved by bureaucrats. The unsung hero of administrators and accountants. An algorithm both ubiquitous and under appreciated. It's pivotal for nearly every project and informs the actions of tech giants and policy makers the world over. It is only mildly hyperbolic to say that understanding this formula unlocks wealth and power. 
@@ -20,6 +24,7 @@ It lies at the heart of online A/B testing, all policy analysis, sound business 
 $$ EV(O)_{p} = p_{1}\$(o_{1}) + p_{2}\$(o_{2}) + ... + p_{k}\$(o_{k}) $$
 The expected financial value of a random process is just the sum of the dollar outcomes weighted by their probabilities. 
 Outcomes can vary from deals of cards, to customer transactions and election results.\footnote{In the jargon $O$ is a random variable which can be realised as any of the outcomes  $ o_{j} :  1 \leq j \leq k$} Aside from the mercenary possibilities, Pascal can argue sincerely that such considerations compel belief in God. But the formula, glossed as a rule for rational action, merits your attention for more mundane wagers too. The meaning of probability is not an idle concern if you intend to maximise your expected value. While statistics are often tortured to rubber stamp decisions and probabilities are abused to fit policy prescriptions with false precision, the crisp clarity of the rule has an enduring appeal that promises to sift the murky swamps of Big Data. It's a scalpel that anyone can wield to parse the syntax of statistical jargon and carve answers from an abstract space of  probabilities.
+
 
 \subsection*{Two sides of a Coin}
 Probability has a dual aspect. On one reading it refers to the long run tendency of a random process, on another the probability is construed as the degree of belief in an outcome. On the first (frequentist) interpretation a probability distribution has certain fixed theoretical characteristics, as in a uniform probability distribution of a fair coin where all outcomes are equally likely. On the second (Bayesian) reading the characteristics of the probability distribution are learned from the data. These approaches are united by the Law of Large numbers which states that as the size of our sample increases our sample average will converge to the expected realisation of the theoretical process.
@@ -42,12 +47,12 @@ When your only tool is a hammer, then everything is a nail. When one model won't
 
 $$ Y = const + \beta X + \epsilon $$
 
-\noindent where $\epsilon$ is a random variable representing the error (or noise). A modest notational device for disaster. While $const, \beta$ are parameters estimated by an optimisation process to ensure the equation fits the data as neatly as possible. In the below graph we have a series characterised by change. After the first shock we can refit the model so that the line tracks well with the evolving data. After the second shock we try another refit, but the range the and variance of the data makes our basic model a poor fit i.e. the data no longer exhibits a linear relationship. This presents three examples of error in the modelling process: (i) forecasts fail for the reason that's it's also difficult to identify (in the moment) those changepoints in the data which reflect structural change, (ii)  the fundamental assumptions that go into the model are sound, but the parameters need be re-estimated based on the new data
+\noindent where $\epsilon$ is a random variable representing the error (or noise). A modest notational device for disaster. While $const, \beta$ are parameters estimated by an optimisation process to ensure the equation fits the data as neatly as possible. In the below graph we have a series characterised by change. After the first shock we can refit the model so that the line tracks well with the evolving data. After the second shock we try another refit, but the range the and variance of the data makes our basic model a poor fit i.e. the data no longer exhibits a linear relationship. This presents three examples of error in the modelling process: (i) forecasts fail for the reason that's it's also difficult to identify (in the moment) those changepoints in the data which reflect structural change, (ii)  the linearity assumptions that go into the model are sound, but the parameters need be re-estimated based on the new data
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{./Plots/piecewise_linear_fits.png}
   \caption{Three samples with starkly different parametrisations}
 \end{figure}
-and (iii) the third linear model is simply a terrible match for the pattern in the data. In practice you never really know whether a new error stems from a misfit but appropriate model or an entirely inappropriate model. But as we increase our number of sample fits we hope to better approximate the true linear process (if any) generating the data. 
+and (iii) the third linear model is simply a terrible match for the pattern in the data. Every model is a guess as to the implicit order in apparent noise. Sometimes there is no order, and other other times the patterns is too subtle for a dumb model to capture. In practice you never really know whether a new error stems from a misfit but appropriate model or an entirely inappropriate model. But as we increase our number of sample fits we hope to better approximate the true linear process (if any) generating the data. 
 
 This warrants a note about errors. Imagine now that the data points on our previous graph are repeatedly re-speckled over the canvas. We can refit a new model for each set of scattered data points and each refit gives us a new sample values for $ const, \beta$. If the underlying data generating process is stable, then the parameter fits will converge to the correct values of $const, \beta$; correct in the sense that they can be used to draw the line of best fit for the data. A statistically stable process is one that can be modelled with errors $\epsilon$ normally distributed around 0, so that the model will be \textit{ correct on average.} Our predictions will overshoot in some cases but on the whole the errors up and down will cancel each other out. Forecasting with the parameters of best fit minimises our forecast errors because the fluctuations are stable about the centre of the line. These are assumptions required for a process to exhibit the tendency of regression towards the mean. If they're not met, we will see poor parameter estimates and wild swings away from the linear path.
 \newline
@@ -58,16 +63,13 @@ This warrants a note about errors. Imagine now that the data points on our previ
 ### Build True Models
 N = 100000
 X = np.random.uniform(0, 20, N)
-independent_err = 
-np.random.normal(0, 10, N)
-corr_err = 
-np.random.uniform (0, 10) + 
-np.sin(np.linspace(0, 10*np.pi, N)) + 
-np.sin(np.linspace(0, 5*np.pi, N))**2 + 
-np.sin(np.linspace(1, 6*np.pi, N))**2
+independent_err = random.normal(0, 10, N)
+corr_err = random.uniform (0, 10) + 
+sin(np.linspace(0, 10*np.pi, N)) + 
+sin(np.linspace(0, 5*np.pi, N))**2 + 
+sin(np.linspace(1, 6*np.pi, N))**2
 
 Y_corr = -2 + 3.5 * X + corr_err
-
 Y = -2 + 3.5 * X + independent_err
 
 population = pd.DataFrame({'X': X,
@@ -99,21 +101,25 @@ for i in range(0, 10000):
 fits.boxplot()
 \end{lstlisting}
 
+\raggedbottom 
+
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{./Plots/distribution_of_beta1.png}
   \caption{The expected realisations for $\beta, const$ with different errors structures}
 \end{figure}
 
-In the case with independent errors the expected value for our parameter estimates match almost exactly the true values of the process. In the second model with correlated errors the parameter estimate for our constant is 4.9 which is significantly different from the true value of -2, and will lead to systematically skewed predictions. Statistical models are just algebraic equations where we use regular sampling to solve for $Y$. The solutions are always approximate, skewed by inadequate or inaccurate data as much as by poor choices in model design. 
+In the case with independent errors the expected value for our parameter estimates match almost exactly the true values of the process. In the second model with correlated errors the parameter estimate for our constant is 4.9 which is significantly different from the true value of -2, and will lead to systematically skewed predictions. Statistical models are just algebraic equations where we use regular sampling to solve for $Y$ from $X$. The solutions are always approximate, skewed by inadequate or inaccurate data as much as by poor choices in model design, so too any measures of expected value based on the models.
 
 \subsection*{Small Worlds, Inference and Decision}
-So when does it make sense to use models? In what sense should expected values guide our action? If models are mere heuristics, from where do we pluck the values for $$p_{i} : 1 \leq i \leq k$$ in the formula $(EV)$. Prediction is a visceral need, it precedes probability in any order of analysis. Without regularity we interpret collisions as timorous noise. Only when there is a better than arbitrary correlation between $X, Y$ will we even think to ascribe a measurable probability to their association. So whether we view probabilities as a measure of credibility or frequency, the focus is always on a process which in reality reveals a pattern under repetition. We're loath to apply a probability model of any kind without some base inductive evidence.
-Models then are deliberate simplifications of complexity, lego-like versions of the world in which we bash parts together to see what sticks. 
+So when does it make sense to use models? In what sense should expected values guide our action? If models are mere heuristics, from where do we pluck the values for $$p_{i} : 1 \leq i \leq k$$ in the formula $(EV)$. Prediction is a visceral need, it precedes probability in any order of analysis. Without regularity we interpret can only interpret collisions as timorous noise. Only when there is a better than arbitrary correlation between $X, Y$ will we even think to ascribe a measurable probability to their association. So whether we view probabilities as a measure of credibility or frequency, the focus is always on a process which in reality reveals a pattern under repetition. We're loath to apply a probability model of any kind without some base inductive evidence.
+Models then are deliberate simplifications of complexity, lego-like versions of the world in which we bash parts together to see what reliably sticks. 
 
-Innovations of in machine learning means that we can fit models with hundreds, thousands and even billions of parameters but this increase in scale does not change fact that models are blind to all factors outside their samples. A good model predicts the variance in future data, in part, by ignoring the genuine complexity of reality. Prediction is the only practical test that matters. If the prediction accuracy holds over successive periods we should become increasingly sure that the probabilities implicit in our model are a good measure of objective risk. We can never be certain the model holds over all successive periods robust to changes in external factors. We can however quantify the degree of uncertainty in the model by observing the spread of the distribution. The expected revenue of a process depends on both this uncertainty and the finer points of statistical inference. 
+Innovations in machine learning mean that we can fit models with hundreds, thousands and even billions of parameters, but this increase in scale does not change fact that models are blind to all factors outside their samples. A good model predicts the variance in future data, in part, by ignoring the genuine complexity of reality. Prediction is the only practical test that matters. If the prediction accuracy holds over successive periods we should become increasingly sure that the probabilities implicit in our model are a good measure of objective risk. We can never be certain the model holds over all successive periods robust to changes in external factors. We can however quantify the degree of uncertainty in the model by observing the spread of the distribution. The expected revenue of a process depends on both this uncertainty and the finer points of statistical inference. 
+
+\raggedbottom
 
 \subsubsection*{Inference from Expected Frequency}
-If you count the number heads in a large series of 5 successive coin flips, you'll arrive a proportion which characterises that process. Repeat the process 1000 times and you'll have something like the true distribution. If it's a fair coin the long run expected result will be half the number of your coin flips. If the coin is weighted you might have as few as 0. This is the binomial distribution, and it really shines when you're trying to gauge fairness. If a process is biased, the distribution will be skewed. We can use this fact for inference. Consider a dispute over whether the game was rigged. 
+Count the number heads in a series of 5 successive coin flips, then repeat the process 1000 times and you'll arrive a proportion which characterises that process. If it's a fair coin the long run expected result will be half the number of your coin flips. If the coin is weighted you might have as few as 0. This is the binomial distribution, and it really shines when you're trying to gauge fairness. If a process is biased, the distribution will be skewed. We can use this fact for inference. Consider a dispute over whether the game was rigged. 
 $$ H_0 : \text{ true proportion of heads } = 0.4  $$
 $$ H_1 : \text{ true proportion of heads } =  0.5 $$
 
