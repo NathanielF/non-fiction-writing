@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper,notitlepage, twocolumn]{article}
+\documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -9,12 +9,14 @@
 \usepackage{lipsum}
 
 \author{Nathaniel Forde}
-\title{Decision and Expected Value}
+\title{Inference and Expected Value}
+
 
 \begin{document}
+\maketitle
 
 \begin{abstract}
-\textit{The article examines the algorithm of expected value. Focusing first on how poor model design and the controversies about statistical inference can shape expected value, continuing on: \textbf{TODO} to discuss the role of expected value in the representation theorems in the foundations of statistics and the deployment of the latter in the welfare theorems of Economics. }
+\textit{The article examines the algorithm of expected value. Focusing first on how poor model design and the controversies about statistical inference can shape expected value. Concluding with an argument for the inevitability of Bayesian methods. }
 \end{abstract}
 
 \section*{Expectations: The Workhorse}
@@ -45,7 +47,7 @@ Well behaved probability distributions are rare beasts; a tiny fraction of the w
 \subsubsection*{Models, Errors and Sampling}
 When your only tool is a hammer, then everything is a nail. When one model won't do, use two. This is roughly the approach adopted when models fail. The problem is especially vivid in forecasting; projected death rates, body counts and stock prices are all subject to sudden shocks. A basic regression model tries to predict an outcome $Y$ as linear function of $X$:
 
-$$ Y = const + \beta X + \epsilon $$
+$$ Y \sim const + \beta X + \epsilon  \ $$
 
 \noindent where $\epsilon$ is a random variable representing the error (or noise). A modest notational device for disaster. While $const, \beta$ are parameters estimated by an optimisation process to ensure the equation fits the data as neatly as possible. In the below graph we have a series characterised by change. After the first shock we can refit the model so that the line tracks well with the evolving data. After the second shock we try another refit, but the range the and variance of the data makes our basic model a poor fit i.e. the data no longer exhibits a linear relationship. This presents three examples of error in the modelling process: (i) forecasts fail for the reason that's it's also difficult to identify (in the moment) those changepoints in the data which reflect structural change, (ii)  the linearity assumptions that go into the model are sound, but the parameters need be re-estimated based on the new data
 \begin{figure}[H]
@@ -108,7 +110,9 @@ fits.boxplot()
   \caption{The expected realisations for $\beta, const$ with different errors structures}
 \end{figure}
 
-In the case with independent errors the expected value for our parameter estimates match almost exactly the true values of the process. In the second model with correlated errors the parameter estimate for our constant is 4.9 which is significantly different from the true value of -2, and will lead to systematically skewed predictions. Statistical models are just algebraic equations where we use regular sampling to solve for $Y$ from $X$. The solutions are always approximate, skewed by inadequate or inaccurate data as much as by poor choices in model design. So too any measures of expected value based on these models.
+In the case with independent errors the expected value for our parameter estimates match almost exactly the true values of the process. In the second model with correlated errors the parameter estimate for our constant is 4.9 which is significantly different from the true value of -2, and will lead to systematically skewed predictions. Statistical models are just algebraic equations where we use regular sampling to solve for $Y$ from $X$. Because Y is also a random variable the regression model encodes a conditional expectation result.
+$$ E(Y_{i} | X_{i} = x )$$
+For fixed values of X, the predictions are spread in a pattern enforced by the various ways we can realise the linear function with estimates for $\beta$ and $const$.The consequent point predictions for $Y$ are always approximate, skewed by the sample data as much as by poor choices in model design. So too any measures of expected value based on these models.
 
 \subsection*{Small Worlds, Inference and Decision}
 So when does it make sense to use models? In what sense should expected values guide our action? If models are mere heuristics, from where do we pluck the values for $$p_{i} : 1 \leq i \leq k$$ in the formula $(EV)$. Prediction is a visceral need, it precedes probability in any order of analysis. Without regularity we interpret can only interpret collisions as timorous noise. Only when there is a better than arbitrary correlation between $X, Y$ will we even think to ascribe a measurable probability to their association. So whether we view probabilities as a measure of credibility or frequency, the focus is always on a process which in reality reveals a pattern under repetition. We're loath to apply a probability model of any kind without some base inductive evidence.
@@ -167,7 +171,7 @@ Assume the particular values for each plan then the expected value of customer j
   \caption{Abrupt increase in dropouts}
 \end{figure}
 
-What is the new expected value? From the frequentist point of view the macro distributional properties haven't significantly changed. But given what we know about the change to the website it would be foolish to assume such a static distributional assumption. Looking only at the small sample of new data, the variance will be large and the estimates of rates of sign-up for each plan will be unstable.  Following the Bayesian paradigm we can condition on our expectations on the new data, the old data or all the data we get slightly different results. The below graph illustrates the spread in values expected revenue calculated on different slices of our data using Bayes Rule.
+What is the new expected value? From the frequentist point of view the macro distributional properties haven't significantly changed. But given what we know about the change to the website it would be foolish to assume such a static distributional assumption. Looking only at the small sample of new data, the variance will be large and the estimates of rates of sign-up for each plan will be unstable.  Following the Bayesian paradigm we can condition our expectations on the new data, the old data or all the data we get slightly different results. The below graph illustrates the spread in values expected revenue calculated on different slices of our data using Bayes Rule.
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{./Plots/expected_revenue_distributions.png}
@@ -184,6 +188,8 @@ All models smuggle in a host of statistical assumptions and these can be range f
 The weakness of the frequentist account of expected revenue is that it's not clear how probability even relates to small sample investigations, while the Bayesian can be charged with having poorly calibrated expectations based on small samples. The tension is that we'd like to make decisions with probability in mind, but in one case probability statements are not well defined and in the other we risk the bias of arbitrary priors. But this is a false dilemma. When the evidence is slim, your credence about objective chance is the best and only guide you have.
 
 A fetish for certainty dramatises these gaps as failures. But the error is to make of statistics monolith; although there is an arcane system of tools and symbols common across topics, no sample is large enough to address all questions you could ask. No analyst should ever be so secure in their models to masquerade as an oracle. Reasoning from small samples is common, best done with caution and plenty of caveats, but better reason than not. Expectations should be modified accordingly.
+
+
 
 \end{document}
 
