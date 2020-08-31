@@ -117,6 +117,42 @@ plt.title("Based on 10,000 fits on 100 observations")
 plt.show()
 
 
+def draw_gaussian_at(position, sample, ax_main=None, model='iid', color='k', **kwargs):
+    filter_var = round(sample['X'], 0) == position
+    avg = sample[filter_var]['predicted_Y_' + model].mean()
+    min = sample[filter_var]['Y'].min()
+    max = sample[filter_var]['Y'].max()
+    dist = pd.Series(sample[filter_var]['predicted_error_'+ model].values)
+    kde = sm.nonparametric.KDEUnivariate(dist)
+    kde.fit()
+    density = kde.density
+    density /= density.max()
+    density *= 1
+    y_axis = np.linspace(min, max, len(density))
+    label = "Expected error X = {x:}: {err: .2f}".format(err = sample[filter_var]['predicted_error_'+ model].mean(),
+                                                         x=position)
+    ax_main.plot((density + position), y_axis, color=color, label=label)
+
+sample = population.sample(n=1000, replace=True, random_state=100)
+true_model = sm.OLS(sample['Y'], sample['X']).fit()
+error_model = sm.OLS(sample['Y_corr'], sample['X']).fit()
+sample['predicted_Y_iid'] = true_model.predict(sample['X'])
+sample['predicted_Y_corr'] = error_model.predict(sample['X'])
+sample['predicted_error_iid'] = sample['Y'] - sample['predicted_Y_iid']
+sample['predicted_error_corr'] = sample['Y'] - sample['predicted_Y_corr']
+fig, ax1 = plt.subplots()
+ax1.plot(sample['X'], sample['Y'],'o')
+ax1.plot(sample['X'], sample['predicted_Y_iid'])
+for each in [5, 10,  15]:
+    d = draw_gaussian_at(position=each, sample=sample, ax_main=ax1, model='iid', color='r')
+plt.show()
+plt.title("Error Distributions around predicted Y values for the {model:}".format(model='iid model'))
+plt.legend()
+
+
+
+
+
 ### Basic t-test
 
 ## Define 2 random distributions

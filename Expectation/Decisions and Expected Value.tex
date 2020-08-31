@@ -6,6 +6,7 @@
 \usepackage{amssymb}
 \usepackage{float}
 \usepackage{listings}
+\usepackage{multicol}
 \usepackage{lipsum}
 
 \author{Nathaniel Forde}
@@ -16,7 +17,7 @@
 \maketitle
 
 \begin{abstract}
-\textit{The article examines the algorithm of expected value. Focusing first on how poor model design and the controversies about statistical inference can shape expected value. Concluding with an argument for the inevitability of Bayesian methods. }
+\textit{The article examines the algorithm of expected value. Focusing first on how poor model design and the controversies about statistical inference can shape expected value. Concluding with an argument for the inevitability of Bayesian methods.}
 \end{abstract}
 
 \section*{Expectations: The Workhorse}
@@ -57,7 +58,6 @@ $$ Y \sim const + \beta X + \epsilon  \ $$
 and (iii) the third linear model is simply a terrible match for the pattern in the data. Every model is a guess as to the implicit order in apparent noise. Sometimes there is no order, and other other times the patterns is too subtle for a dumb model to capture. In practice you never really know whether a new error stems from a misfit but appropriate model or an entirely inappropriate model. But as we increase our number of sample fits we hope to better approximate the true linear process (if any) generating the data. 
 
 This warrants a note about errors. Imagine now that the data points on our previous graph are repeatedly re-speckled over the canvas. We can refit a new model for each set of scattered data points and each refit gives us a new sample values for $ const, \beta$. If the underlying data generating process is stable, then the parameter fits will converge to the correct values of $const, \beta$; correct in the sense that they can be used to draw the line of best fit for the data. A statistically stable process is one that can be modelled with errors $\epsilon$ normally distributed around 0, so that the model will be \textit{ correct on average.} Our predictions will overshoot in some cases but on the whole the errors up and down will cancel each other out. Forecasting with the parameters of best fit minimises our forecast errors because the fluctuations are stable about the centre of the line. These are assumptions required for a process to exhibit the tendency of regression towards the mean. If they're not met, we will see poor parameter estimates and wild swings away from the linear path.
-\newline
 
 \noindent The code below builds two sampling distributions based on different underlying processes.  One in which the errors are independent, normally distributed around 0 the other in which the errors are correlated in a sine-wave like pattern, increasing and decreasing periodically. This is akin to difference between measuring error when predicting the heights of randomly sampled people versus predicting the sales volumes on randomly selected days of the week. A random sample of daily sales  risks clumping weekends together and skewing the expected values. No such risk exists when sampling from independent individuals. 
 
@@ -114,6 +114,14 @@ In the case with independent errors the expected value for our parameter estimat
 $$ E(Y_{i} | X_{i} = x )$$
 For fixed values of X, the predictions are spread in a pattern enforced by the various ways we can realise the linear function with estimates for $\beta$ and $const$.The consequent point predictions for $Y$ are always approximate, skewed by the sample data as much as by poor choices in model design. So too any measures of expected value based on these models.
 
+\begin{figure}[H]
+\begin{multicols}{2}
+      \includegraphics[width=\linewidth]{./Plots/errors_dist_iid.png}\par 
+    \includegraphics[width=\linewidth]{./Plots/correlated_errors_dist.png}\par 
+    \end{multicols}
+  \caption{Error Distribution for the two models on a random sample of 1000 observations}
+\end{figure}
+
 \subsection*{Small Worlds, Inference and Decision}
 So when does it make sense to use models? In what sense should expected values guide our action? If models are mere heuristics, from where do we pluck the values for $$p_{i} : 1 \leq i \leq k$$ in the formula $(EV)$. Prediction is a visceral need, it precedes probability in any order of analysis. Without regularity we interpret can only interpret collisions as timorous noise. Only when there is a better than arbitrary correlation between $X, Y$ will we even think to ascribe a measurable probability to their association. So whether we view probabilities as a measure of credibility or frequency, the focus is always on a process which in reality reveals a pattern under repetition. We're loath to apply a probability model of any kind without some base inductive evidence.
 Models then are deliberate simplifications of complexity, lego-like versions of the world in which we bash parts together to see what reliably sticks. 
@@ -153,7 +161,6 @@ which would lead us to infer that the coin was fair. The example slightly obscur
 Neither style of analysis ends with these calculations, both would continue to probe the limits of each hypothesis. We'd have to consider things like sample size and sensitivity testing, model performance and cost of errors. The point is just that there are reasons for dispute. This example shows the heart of the conflict in the dual aspect of probability. There is enough latitude in the manner in which we set up a probability model that the mathematics can yield apparently inconsistent results. 
 
 The frequentist evaluation of our biased coin is very sensitive to the choice of hypotheses, while the Bayesian approach is influenced by the choice of prior. Why set up a significance test against assumed cheating rather than assumed fairness? Why attribute equal weight to both hypotheses? Why use a 5\% threshold if you're concerned about systematic cheating? Both offer strategies for managing uncertainty, but both approaches come with baggage, that not even Big data can solve.
-\newline 
 
 \noindent What is Big Data? There is some hype over the term, but it's not magic, it's just bigger sample sizes for specific questions. So far, mostly questions of consumer preference. Websites and apps collect traffic and log interactions. Your details are captured and pulled into vast aggregates of consumer data. I can route and re-route your trajectory across an online environment. Applying the same pressures to tens of thousands of others, we can trace out how the topology of particular sites throw up speed bumps on the customer's journey. 
 

@@ -1,0 +1,9 @@
+.idea
+.aux
+.log
+.synctex.gz
+.aex
+.gz
+*.aux
+Expectation/Decisions and Expected Value.bbl
+Expectation/Decisions and Expected Value.log
