@@ -69,6 +69,7 @@ plt.show()
 def cobb_douglas(g1, g2, a1, a2):
     return g1**a1 * g2**a2
 
+
 fig, ax = plt.subplots()
 g1 = np.linspace(1, 10, 100)
 g2 = np.linspace(1, 20, 100).reshape((100, 1))
@@ -97,3 +98,21 @@ ax.set_ylabel('g2')
 ax.set_zlabel('U(g1, g2)')
 plt.title("Cobb Douglas Utility Curve for two goods")
 plt.show()
+
+
+g1 = np.linspace(1, 10, 100)
+g2 = np.linspace(1, 20, 100).reshape((100, 1))
+def g1_indifference(g2, k, alpha=1/3):
+    orig = k**(1/(1-alpha)) * g2**(-alpha/(1-alpha))
+    return orig
+
+def plot_indifference_curves(ax, alpha=.5):
+    k = np.arange(1, 14, 3)
+    ax.plot(g2, g1_indifference(g2, k, alpha))
+    ax.legend(["U(g1^.5, g2^.5)" + " = {}".format(i) for i in k])
+    ax.set_xlabel("g2")
+    ax.set_ylabel("g1 ")
+    plt.title("Indifference Curves based on Cobb Douglas Utility")
+
+fig, ax = plt.subplots()
+plot_indifference_curves(ax)
