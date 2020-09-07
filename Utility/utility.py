@@ -4,26 +4,26 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-def linear_utility(x, a, b):
+def linear_utility(x, a=2, b=3):
     # This works fine on smaller numbers
     return a + b*x
 
-def quadriatic_utility(x, b):
+def quadriatic_utility(x, b=0.5):
     return x - (b)*(x**2)
 
 def logarithmic_utility(x, a, b):
     return np.log(a) + b*np.log(x)
 
-def negative_exp_utility(x, c):
+def negative_exp_utility(x, c=.5):
     return -np.exp(-(c*x))
 
-def narrow_power(B, x):
+def narrow_power(x, B=2):
     return (B / (B - 1))*(x**(1 - (1/B)))
 
 xdata = np.linspace(0, 10, 100)
 negExp = negative_exp_utility(xdata, 0.5)
 quad = quadriatic_utility(xdata, 0.5)
-narrow_pow = narrow_power(2, xdata)
+narrow_pow = narrow_power(xdata, 2)
 lin = linear_utility(xdata, 2, 3)
 
 # Create plot
@@ -64,6 +64,36 @@ for _ax in [ax0, ax1, ax2, ax3]:
 
 fig.suptitle("Utility measures over increasing quantities of a good")
 plt.show()
+
+
+from scipy.misc import derivative
+
+# Create plot
+fig, ((ax0, ax1), (ax2, ax3)) = plt.subplots(2, 2)
+
+derivs = [derivative(negative_exp_utility,x) for x in xdata]
+ax0.plot(xdata,derivs , label="Derivative of Negative Exponential")
+ax0.set_title("Derivative Negative Exponential")
+ax0.set_xticks([])
+
+derivs2 = [derivative(quadriatic_utility, x) for x in xdata]
+ax1.plot(xdata,derivs2, label="Derivative of Quadratic Curve")
+ax1.set_title("Derivative of Quadratic Utility")
+ax1.set_xticks([])
+
+derivs3 = [derivative(linear_utility, x) for x in xdata]
+ax2.plot(xdata,derivs3)
+ax2.set_title("Derivative of Linear Utility")
+ax2.set_xticks([])
+
+derivs4 = [derivative(narrow_power, x) for x in xdata]
+ax3.plot(xdata, derivs4)
+ax3.set_title("Derivative of Narrow Power Utility")
+ax3.set_xticks([])
+
+plt.show()
+
+
 
 
 def cobb_douglas(g1, g2, a1, a2):
