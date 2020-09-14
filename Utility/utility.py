@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-def linear_utility(x, a=2, b=3):
+def linear_utility(x, a=2, b=4):
     # This works fine on smaller numbers
     return a + b*x
 
@@ -94,8 +94,6 @@ ax3.set_xticks([])
 plt.show()
 
 
-
-
 def cobb_douglas(g1, g2, a1, a2):
     return g1**a1 * g2**a2
 
@@ -142,7 +140,67 @@ def plot_indifference_curves(ax, alpha=.5):
     ax.legend(["U(g1^.5, g2^.5)" + " = {}".format(i) for i in k])
     ax.set_xlabel("g2")
     ax.set_ylabel("g1 ")
-    plt.title("Indifference Curves based on Cobb Douglas Utility")
+    plt.title("Indifference Curves with Budget Constraint")
+
+def budget(B, W=50, pa=2):
+    "Given B, W, and pa return the max amount of A our consumer can afford"
+    return (W - B) / pa
+
+def plot_budget_constraint(ax, W=40, pa=2):
+    g2 = np.array([0, W])
+    g1 = budget(g2, W, pa)
+    ax.plot(g2, g1)
+    ax.fill_between(g2, 0, g1, alpha=0.2)
+    ax.set_xlabel("g2")
+    ax.set_ylabel("g1")
+    return ax
+
 
 fig, ax = plt.subplots()
 plot_indifference_curves(ax)
+plot_budget_constraint(ax)
+
+from scipy.optimize import minimize_scalar
+def objective(B, W=40, pa=2):
+    """
+    Return value of -U for a given B, when we consume as much A as possible
+
+    Note that we return -U because scipy wants to minimize functions,
+    and the value of B that minimizes -U will maximize U
+    """
+    A = budget(B, W, pa)
+    return -cobb_douglas(A, B, .5, .5)
+
+result = minimize_scalar(objective)
+optimal_B = result.x
+optimal_A = budget(optimal_B, 40, 2)
+optimal_U = cobb_douglas(optimal_A, optimal_B, .5, .5)
+
+print("The optimal U is ", optimal_U)
+print("and was found at (A,B) =", (optimal_A, optimal_B))
+
+# import random
+# np.random.seed(100)
+# customer = ['price_sensitive']*500 + ['price_insensitive']*500
+# hertz_price = np.random.normal(13, 4, 1000)
+# uber_price = np.random.normal(13, 3, 1000)
+#
+# df = pd.DataFrame({'customer_class': customer,
+#               'hertz_price': hertz_price,
+#               'uber_price': uber_price})
+#
+# df['relative_value_hertz'] = df['hertz_price'] - (df[['uber_price','hertz_price']].min(axis=1)-2)
+# df['relative_value_uber'] = df['uber_price'] - (df[['uber_price','hertz_price']].mean(axis=1)+1)
+# df['chosen'] = np.where((df['hertz_price'] > df['uber_price']), 'uber','hertz')
+# random_choces = random.choices(['uber', 'hertz'], k=500)
+# df[df['customer_class'] == 'price_insensitive']['chosen'] = random_choces
+# df['relative_value'] = np.where((df['chosen'] == 'hertz'), df['relative_value_hertz'], df['relative_value_uber'])
+# df = df.sample(frac=1)
+# df['day'] = np.random.uniform(1, 10, 1000).astype('int')
+# df.sort_values(by='day', inplace=True)
+#
+# grouped = df.groupby(by=['customer_class', 'day', 'chosen']).agg(
+#     sum_relative_hertz_value=('relative_value', 'sum'),
+#     count_choices=('relative_value', 'count')
+# ).unstack('chosen')
+
