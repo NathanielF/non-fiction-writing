@@ -38,7 +38,7 @@
 
 \begin{abstract}
 \noindent
-This article continues the investigation of the expected utility model of rational choice. We begin by examining how preference relates to utility, before continuing to the representation theorems which formalise the connection. Will we see that the nature of these theorems, coupled with the indeterminacy of statistical inference is a brittle foundation for predictive economic models of consumer choice.
+This article continues the investigation of the expected utility model of rational choice. We begin by examining the useful properties of utility functions, before continuing to the representation theorems which formalise the connection. Will we see that the nature of these theorems, coupled with the indeterminacy of statistical inference is a brittle foundation for predictive economic models of consumer choice.
 \end{abstract}
 
 
@@ -92,7 +92,7 @@ $$ \text{ maximise } u(g_{1}, g_{2})  \text{ subject to } cost(g_{1}, g_{2}) =  
 
 $$ L = g_{1}^{\frac{1}{2}}g_{2}^{\frac{1}{2}} - \lambda(2g_{1} + 3g_{2} - 40) $$
 
-\noindent where $2$ and $3$ are the unit cost of the respective goods, and $40$ is our total budget. While $\lambda$ is our Lagrangian multiplier. This term will be used to re-express the algebra of our equation. We can discover where this function is maximised when its gradient can be set to zero. As before we first want to express the implicit function of $g_{1}$ in terms of $g_{2}$, but this time including the constraints.
+\noindent where $2$ and $3$ are the unit cost of the respective goods, and $40$ is our total budget. While $\lambda$ is our Lagrangian multiplier. This term will be used to re-express the algebra of our equation as a function of the consumer's capacity to spend. We can discover where utility is maximised when its gradient can be set to zero. As before we first want to express the implicit function of $g_{1}$ in terms of $g_{2}$, but this time including the constraints.
 
 
 \[
@@ -112,10 +112,25 @@ $$ \Rightarrow  (\frac{1}{4})^2\frac{1}{g_{1}}g_{2} = (\frac{4}{25})^2\frac{1}{g
 
 $$ \Rightarrow g_{2} = \frac{16}{25}g_{1}$$
 
-The same pattern holds for cases with more than two goods. We can express the value of given good $g_n$ in terms of a function $f(g_{1}, ... g_{n-1}) $. Then substituting this value into our constraint we get: 
+\noindent The same pattern holds for cases with more than two goods. We can express the value of given good $g_n$ in terms of a function $f(g_{1}, ... g_{n-1}) $. Then substituting this value into our constraint we get: 
 
-$$ 2g_{1} + 3(\frac{16}{25})g_{1} = 40 = 2g_{1} + 1.92g1 = 40 = 3.92g1 = 40$$
-$$ \Rightarrow optimal(g_{1}) = 10.20 \text{ and } optimal(g_{2}) = 6.52 $$
+$$ 2g_{1} + 3(\frac{16}{25})g_{1} = 40 \Rightarrow 2g_{1} + 1.92g_{1} = 40 \Rightarrow 3.92g_{1} = 40$$
+$$ \text{ Proving the optimial settings are } g_{1}^{*} = 10.20 \text{ and } g_{2}^{*} = 6.52 \text{ and } \lambda^{*} = 0.20 $$
+
+Furthermore, we can interpret the $\lambda$ term as the rate of change of the consumer's utility as a function of the cost. The proof is a little more involved, but the significance of this interpretation should be obvious. If we knew our consumer's adhered to a particular style of utility function we could model how price-changes would impact their returns to utility. 
+
+\subsection*{Estimating Utility Curves from Expressed Preference}
+
+If we can elicit preference statements from our consumer we construct a utility curve as follows. First observe the preferences expressed by consumer decisions and then map the maximal and least preferred options to convenient polarities. For instance:
+
+$$ g_{1} \succ g_{2} \succ g_{3} \succ g_{4} \succ g_{5} $$
+
+where:
+
+$$ u(g_{1}) = 0 \text{ and } u(g_{5}) = 1 $$
+
+\noindent then each of the intermediary options can be measured in the interval between 0 and 1. However there are an infinite number of simple ordinal mappings that would work, and a strict ordering does nothing to convey the degree of feeling associated with each option. 
+
 
 
 

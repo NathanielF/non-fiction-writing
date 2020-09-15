@@ -2,6 +2,7 @@ import numpy as np
 from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
 import pandas as pd
+from sympy import solve, symbols, Eq
 
 
 def linear_utility(x, a=2, b=4):
@@ -178,6 +179,13 @@ optimal_U = cobb_douglas(optimal_A, optimal_B, .5, .5)
 
 print("The optimal U is ", optimal_U)
 print("and was found at (A,B) =", (optimal_A, optimal_B))
+
+
+g1, g2, l = symbols('g1 g2 l')
+
+solution = solve([Eq((1/2)*(g1**(-1/2))*(g2**(1/2)) - 2*l, 0),
+   Eq((1/2)*(g2**(-1/2))*(g1**(1/2)) - 3*l, 0),
+   Eq(2*g1+3*g2 - 40, 0)],[g1,g2,l], simplify=False)
 
 # import random
 # np.random.seed(100)
