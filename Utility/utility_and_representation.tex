@@ -21,6 +21,17 @@
 \usepackage{minted}
 \usepackage{mathtools}
 \usepackage[math]{cellspace}
+\usepackage[most]{tcolorbox}
+\usepackage{mdframed}
+\newtheorem{theo}[section]{Theorem}
+
+\newenvironment{ftheo}[1]
+  {\begin{mdframed}
+  \sloppy
+  \begin{theo}[#1]
+  }
+  {\end{theo}
+\end{mdframed}}
 
 % Standardize command font styles and environments
 \newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
@@ -31,6 +42,32 @@
 \newcommand{\doccls}[1]{\texttt{#1}}% document class name
 \newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
 \newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\definecolor{myblue}{RGB}{3,81,138}
+\definecolor{mygray}{RGB}{236, 236, 236}
+
+\tcbset{mystyle/.style={
+  breakable,
+  enhanced,
+  outer arc=0pt,
+  arc=0pt,
+  colframe=myblue,
+  colback=mygray,
+  attach boxed title to top left,
+  boxed title style={
+    colback=myblue,
+    outer arc=0pt,
+    arc=0pt,
+    },
+  fonttitle=\sffamily
+  }
+}
+
+\newtcolorbox[auto counter,number within=chapter]{example}[1][]{
+  mystyle,
+  title= Box~\thetcbcounter:#1
+}
+
+
 
 \begin{document}
 
@@ -65,9 +102,9 @@ $$ u(\mathbf{g}) = g_{0}^{\alpha_{0}}g_{1}^{\alpha_{1}} ... g_{n}^{\alpha_{n}}$$
 \caption{A consumers utility curve for combinations of two goods}
 \end{marginfigure} 
 
-Then taking the case of two goods $g1, g2$ we can in this particular case determine an indifference curve where you would be willing to exchange quantities of $g1$ for an agreeable amount of $g2$.  Set 
-$$u(\mathbf{g}) = k =  g_{1}^{\frac{1}{2}}g_{2}^{\frac{1}{2}} = (g_{1}g_{2})^{\frac{1}{2}}  = \sqrt{g_{1}g_{2}}$$
-$$ \Rightarrow k^{2} = g_{1}g_{2} \Rightarrow \frac{k^{2}}{g_{2}} = g_{1}$$
+Then taking the case of two goods $g1, g2$ we can in this particular case determine an indifference curve where you would be willing to exchange quantities of $g1$ for an agreeable amount of $g2$. The task it to express the value of a given good as priced in terms of the other goods. Set 
+$$u(\mathbf{g}) = \lambda =  g_{1}^{\frac{1}{2}}g_{2}^{\frac{1}{2}} = (g_{1}g_{2})^{\frac{1}{2}}  = \sqrt{g_{1}g_{2}}$$
+$$ \Rightarrow \lambda^{2} = g_{1}g_{2} \Rightarrow \frac{\lambda^{2}}{g_{2}} = g_{1}$$
 
 Using this formula we can express how the quantities of fair exchange vary based on a fixed utility value. This is not to say that these curves represent an actual or objective fair price, just that when measured in terms of utility these are mappings of quantities of good we would be happy to exchange. Your view of a fair price is encoded in your utility theory. It's at this point when utility theory can be said to verge on empirical science.If we can model your preferences as a utility function characteristic of some general attitude toward acquisition, we might also hope to able to predict future trades.  
 \begin{marginfigure}
@@ -78,10 +115,10 @@ Using this formula we can express how the quantities of fair exchange vary based
 \subsection*{Optimising Utility}
 A further complication arises when  we try to factor for a consumer's budget. The shape of the Cobb-Douglas function shows that the utility surface is constantly increasing with our rate acquisition. So without any constraints the consumer would not achieve satisfaction, but continue like glutton. But add a budget constraint and we need to find the maximum point at which an indifference curve insects with our budgetary line. Instead of solving the equation: 
 
-$$ \text{ Find } g_{1}, g_{2} \text{ such that } u(g_{1}, g_{2}) = k $$
+$$ \text{ Find } g_{1}, g_{2} \text{ such that } u(g_{1}, g_{2}) = \lambda $$
 
 \noindent we need to solve a constrained optimisation problem: 
-$$ \text{ maximise } u(g_{1}, g_{2})  \text{ subject to } cost(g_{1}, g_{2}) =  k$$
+$$ \text{ maximise } u(g_{1}, g_{2})  \text{ subject to } cost(g_{1}, g_{2}) =  \lambda$$
 
 \noindent This style of problem can be approached with the method of Lagrange multipliers. If we let:
 
@@ -92,8 +129,10 @@ $$ \text{ maximise } u(g_{1}, g_{2})  \text{ subject to } cost(g_{1}, g_{2}) =  
 
 $$ L = g_{1}^{\frac{1}{2}}g_{2}^{\frac{1}{2}} - \lambda(2g_{1} + 3g_{2} - 40) $$
 
-\noindent where $2$ and $3$ are the unit cost of the respective goods, and $40$ is our total budget. While $\lambda$ is our Lagrangian multiplier. This term will be used to re-express the algebra of our equation as a function of the consumer's capacity to spend. We can discover where utility is maximised when its gradient can be set to zero. As before we first want to express the implicit function of $g_{1}$ in terms of $g_{2}$, but this time including the constraints.
+\noindent where $2$ and $3$ are the unit cost of the respective goods, and $40$ is our total budget. While $\lambda$ is our Lagrangian multiplier. This term will be used to re-express the algebra of our equation as a function of the consumer's capacity to spend. As usual we can discover where utility is maximised when the gradient of the curve can be set to zero. As before we first want to express the implicit function of $g_{1}$ in terms of $g_{2}$, but this time including the constraints.
 
+\begin{fullwidth}
+\begin{example}[  Lagrangian Multiplier]
 
 \[
 \nabla L = dL /  d\mathbf{g} =
@@ -115,24 +154,44 @@ $$ \Rightarrow g_{2} = \frac{16}{25}g_{1}$$
 \noindent The same pattern holds for cases with more than two goods. We can express the value of given good $g_n$ in terms of a function $f(g_{1}, ... g_{n-1}) $. Then substituting this value into our constraint we get: 
 
 $$ 2g_{1} + 3(\frac{16}{25})g_{1} = 40 \Rightarrow 2g_{1} + 1.92g_{1} = 40 \Rightarrow 3.92g_{1} = 40$$
-$$ \text{ Proving the optimial settings are } g_{1}^{*} = 10.20 \text{ and } g_{2}^{*} = 6.52 \text{ and } \lambda^{*} = 0.20 $$
+Proving the optimial settings are  $g_{1}^{*} = 10.20 \text{ and } g_{2}^{*} = 6.52 \text{ and } \lambda^{*} = 0.20 $
 
-Furthermore, we can interpret the $\lambda$ term as the rate of change of the consumer's utility as a function of the cost. The proof is a little more involved, but the significance of this interpretation should be obvious. If we knew our consumer's adhered to a particular style of utility function we could model how price-changes would impact their returns to utility. 
+\end{example}
+\end{fullwidth}
 
-\subsection*{Estimating Utility Curves from Expressed Preference}
+This proof shows how we triangulate a consumer's view of any good as expressed through the medium of their utility function. But the method of Lagrangian multipliers is more than a mere algebraic trick. We can interpret the $\lambda$ term as the rate of change of the consumer's utility as a function of the cost. The proof is a little more involved, but the significance of this interpretation should be obvious. If we knew our consumer's adhered to a particular style of utility function we could model how price-changes would impact their returns to utility. 
+
+\subsection*{From Indifference to Utility}
 
 If we can elicit preference statements from our consumer we construct a utility curve as follows. First observe the preferences expressed by consumer decisions and then map the maximal and least preferred options to convenient polarities. For instance:
 
 $$ g_{1} \succ g_{2} \succ g_{3} \succ g_{4} \succ g_{5} $$
 
-where:
+\noindent where:
 
 $$ u(g_{1}) = 0 \text{ and } u(g_{5}) = 1 $$
 
-\noindent then each of the intermediary options can be measured in the interval between 0 and 1. However there are an infinite number of simple ordinal mappings that would work, and a strict ordering does nothing to convey the degree of feeling associated with each option. 
+\noindent then each of the intermediary options can be measured in the interval between 0 and 1. However there are an infinite number of simple ordinal mappings that would work, and a strict ordering does nothing to convey the degree of feeling associated with each option. But we can calibrate utility scales based on decisions made about offered bets. Each individual good can be assessed against a simple win-loss lottery between the two most extreme outcomes. If the consumer is indifferent between the sure prospect of the good and a fixed odds lottery on their most preferred outcome, they've implicitly weighed their utility of the good. 
 
+$$ \forall i \exists  p :  g _{i} \sim [p \cdot g_{1}, (1-p)\cdot g_{5}] \rightarrow u(g_{i}) = p $$
 
+\noindent So whenever we are indifferent between a sure thing and a win-loss lottery over the best and worst outcomes we have implicitly chosen the utility of the of good on a 0-1 scale. In this manner we can construct a utility curve across the entire range of options. 
 
+\section{Representation: Decision Under Risk}
+The most famous result in decision theory is von Neumann and Morgenstern's Representation theorem. It shows (using the technique discussed above) how expressed preferences which adhere to certain axioms of rationality track a utility measure and can be interpreted as an agent's attempt to maximise their expected utility.  But the theorem is limited to decisions over well-defined lotteries, and as such makes a poor model for general choice under uncertainty where the odds are approximate. 
+
+\begin{ftheo}{vNM's Representation Theorem}
+If an individual i's preference relation $\succeq$ is transitive, complete and satisfies: \begin{enumerate}
+\item (Continuity): $\forall g_{1} , g_{2} , g_{3} : ( g_{1} \succeq g_{2} \succeq g_{3}) \rightarrow \exists v \in [0, 1] \wedge g_{2} \sim_{i} [v g_{1}, (1-v) g_{3}]_{Lot}$
+\item (Monotonicity): If $ v_{1}, v_{2} \in [0, 1]$ and $ g_{1} \succ g_{2}$ then  $ \Big( [ v_{1} g_{1}, (1-v_{1})g_{2}]_{Lot} \succeq [ v_{2} g_{1}, (1-v_{2})g_{2}]_{Lot} \Big) \Leftrightarrow v_{1} \geq v_{2}$
+\item (Reduction of Compound lotteries): Each compound lottery ${[q_{1}Lot_{p_{1}}, ...,  q_{n}Lot_{p_{n}}]}$ reduces to a simple lottery where each good $(1, .. k)$ is weighted across all branches of the nested decision tree ${[(q_{1}p^{k}_{1} + q_{2}p^{k}_{2} ... + q_{n}p^{k}_{n})g_{k} .... , (q_{1}p^{k-1}_{1} , ...)g_{k-1} + ... (q_{1}p^{1}_{1} , ...)g_{1}]_{Lot}}$ by the usual rules of probability for branching compound events such that $\widehat{Lot} \sim Lot$
+\item (Independence) If $\widehat{Lot} = [q_{1}Lot_{1}, ..., q_{j}Lot_{j}...q_{n}Lot_{n}]$ and $L_{j} \sim M$, then $\widehat{Lot} \sim \widehat{Lot}^{'} = [q_{1}Lot_{1}, ..., q_{j}M...q_{n}Lot_{n}]$ 
+\end{enumerate}  
+then $\exists u_{p} : [ g_{1}, ... g_{n}] \mapsto \text{ Val } $ where 
+$ u_{p}(Lot) = p_{1}u(g_{1}) + ... + p_{k}u(g_{k}) = E(u_{p}(Lot))$ and  $u(g_{1}) \geq u(g_{2}) \Leftrightarrow g_{1} \succeq g_{2}$ so that $u$ represents $\succeq$ unique up to a positive linear transformation.
+\end{ftheo}\footnote{We follow the example in: \cite{GameTheory}}
+
+\noindent For a well defined and fixed probability function $p$ over the goods $g_{1} ..... g_{n}$ the above constraints are sufficient to define a sensible utility function based on an agent's expressed preferences. The thought gives hope to the idea that you would be able to predict an individual's actions in any environment where you knew both their preferences and the objective probabilities at play.
 
 \bibliography{sample-handout}
 \bibliographystyle{plainnat}
