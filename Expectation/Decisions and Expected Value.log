@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.15)  28 AUG 2020 23:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.15)  4 SEP 2020 19:32
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -373,38 +373,87 @@ File: listings.cfg 2014/09/06 1.5e listings configuration
 ))
 Package: listings 2014/09/06 1.5e (Carsten Heinz)
 
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2015/03/31 v1.8m multicolumn formatting (FMi)
+\c@tracingmulticols=\count109
+\mult@box=\box32
+\multicol@leftmargin=\dimen118
+\c@unbalance=\count110
+\c@collectmore=\count111
+\doublecol@number=\count112
+\multicoltolerance=\count113
+\multicolpretolerance=\count114
+\full@width=\dimen119
+\page@free=\dimen120
+\premulticols=\dimen121
+\postmulticols=\dimen122
+\multicolsep=\skip46
+\multicolbaselineskip=\skip47
+\partial@page=\box33
+\last@line=\box34
+\maxbalancingoverflow=\dimen123
+\mult@rightbox=\box35
+\mult@grightbox=\box36
+\mult@gfirstbox=\box37
+\mult@firstbox=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\@tempa=\box54
+\@tempa=\box55
+\c@columnbadness=\count115
+\c@finalcolumnbadness=\count116
+\last@try=\dimen124
+\multicolovershoot=\dimen125
+\multicolundershoot=\dimen126
+\mult@nat@firstbox=\box56
+\colbreak@box=\box57
+\mc@col@check@num=\count117
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
-\c@lips@count=\count109
+\c@lips@count=\count118
 )
 (./Decisions and Expected Value.aux)
 \openout1 = `"Decisions and Expected Value.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count110
-\scratchdimen=\dimen118
-\scratchbox=\box32
-\nofMPsegments=\count111
-\nofMParguments=\count112
+\scratchcounter=\count119
+\scratchdimen=\dimen127
+\scratchbox=\box58
+\nofMPsegments=\count120
+\nofMParguments=\count121
 \everyMPshowfont=\toks25
-\MPscratchCnt=\count113
-\MPscratchDim=\dimen119
-\MPnumerator=\count114
-\makeMPintoPDFobject=\count115
+\MPscratchCnt=\count122
+\MPscratchDim=\dimen128
+\MPnumerator=\count123
+\makeMPintoPDFobject=\count124
 \everyMPtoPDFconversion=\toks26
 ) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -454,13 +503,13 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count116
-LaTeX Font Info:    Try loading font information for U+msa on input line 16.
+\c@lstlisting=\count125
+LaTeX Font Info:    Try loading font information for U+msa on input line 17.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 16.
+LaTeX Font Info:    Try loading font information for U+msb on input line 17.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -471,7 +520,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: ./Plots/convergence_of_law_of_large_numbers.png Graphic file (type png)
 <use ./Plots/convergence_of_law_of_large_numbers.png>
 Package pdftex.def Info: ./Plots/convergence_of_law_of_large_numbers.png used o
-n input line 37.
+n input line 38.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
 
 <./Plots/variety_of_distributions.png, id=22, 462.528pt x 346.896pt>
@@ -479,7 +528,7 @@ File: ./Plots/variety_of_distributions.png Graphic file (type png)
 
 <use ./Plots/variety_of_distributions.png>
 Package pdftex.def Info: ./Plots/variety_of_distributions.png used on input lin
-e 42.
+e 43.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
  [2 <./Plots/convergence_of_law_of_large_numbers.png>]
 <./Plots/piecewise_linear_fits.png, id=29, 462.528pt x 346.896pt>
@@ -487,14 +536,10 @@ File: ./Plots/piecewise_linear_fits.png Graphic file (type png)
 
 <use ./Plots/piecewise_linear_fits.png>
 Package pdftex.def Info: ./Plots/piecewise_linear_fits.png used on input line 5
-4.
+5.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
- [3 <./Plots/variety_of_distributions.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 59--61
-
- []
-
-[4 <./Plots/piecewise_linear_fits.png>]
+ [3 <./Plots/variety_of_distributions.png>] [4 <./Plots/piecewise_linear_fits.p
+ng>]
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/09/06 1.5e listings language file
 )
@@ -505,60 +550,72 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 70.
- [5]
-<./Plots/distribution_of_beta1.png, id=43, 462.528pt x 346.896pt>
+
+<./Plots/distribution_of_beta1.png, id=40, 462.528pt x 346.896pt>
 File: ./Plots/distribution_of_beta1.png Graphic file (type png)
 
 <use ./Plots/distribution_of_beta1.png>
 Package pdftex.def Info: ./Plots/distribution_of_beta1.png used on input line 1
 09.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
- [6 <./Plots/distribution_of_beta1.png>] <./Plots/binomial_test.png, id=48, 462
-.528pt x 346.896pt>
+ [5]
+<./Plots/errors_dist_iid.png, id=44, 462.528pt x 346.896pt>
+File: ./Plots/errors_dist_iid.png Graphic file (type png)
+
+<use ./Plots/errors_dist_iid.png>
+Package pdftex.def Info: ./Plots/errors_dist_iid.png used on input line 119.
+(pdftex.def)             Requested size: 167.5pt x 125.6235pt.
+
+<./Plots/correlated_errors_dist.png, id=45, 462.528pt x 346.896pt>
+File: ./Plots/correlated_errors_dist.png Graphic file (type png)
+
+<use ./Plots/correlated_errors_dist.png>
+Package pdftex.def Info: ./Plots/correlated_errors_dist.png used on input line 
+120.
+(pdftex.def)             Requested size: 167.5pt x 125.6235pt.
+ [6 <./Plots/distribution_of_beta1.png>] [7 <./Plots/errors_dist_iid.png> <./Pl
+ots/correlated_errors_dist.png>]
+<./Plots/binomial_test.png, id=56, 462.528pt x 346.896pt>
 File: ./Plots/binomial_test.png Graphic file (type png)
 
 <use ./Plots/binomial_test.png>
-Package pdftex.def Info: ./Plots/binomial_test.png used on input line 133.
+Package pdftex.def Info: ./Plots/binomial_test.png used on input line 141.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
- [7] [8 <./Plots/binomial_test.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 155--157
-
- []
-
-<./Plots/outcomes_of_signup.png, id=57, 462.528pt x 346.896pt>
+ [8 <./Plots/binomial_test.png>] [9]
+<./Plots/outcomes_of_signup.png, id=65, 462.528pt x 346.896pt>
 File: ./Plots/outcomes_of_signup.png Graphic file (type png)
 
 <use ./Plots/outcomes_of_signup.png>
-Package pdftex.def Info: ./Plots/outcomes_of_signup.png used on input line 163.
+Package pdftex.def Info: ./Plots/outcomes_of_signup.png used on input line 170.
 
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
- [9]
-<./Plots/outcomes_of_signup_post.png, id=62, 462.528pt x 346.896pt>
+
+<./Plots/outcomes_of_signup_post.png, id=66, 462.528pt x 346.896pt>
 File: ./Plots/outcomes_of_signup_post.png Graphic file (type png)
 
 <use ./Plots/outcomes_of_signup_post.png>
 Package pdftex.def Info: ./Plots/outcomes_of_signup_post.png used on input line
- 170.
+ 177.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
  [10 <./Plots/outcomes_of_signup.png>] <./Plots/expected_revenue_distributions.
-png, id=67, 462.528pt x 346.896pt>
+png, id=71, 462.528pt x 346.896pt>
 File: ./Plots/expected_revenue_distributions.png Graphic file (type png)
 
 <use ./Plots/expected_revenue_distributions.png>
 Package pdftex.def Info: ./Plots/expected_revenue_distributions.png used on inp
-ut line 177.
+ut line 184.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
  [11 <./Plots/outcomes_of_signup_post.png>] [12 <./Plots/expected_revenue_distr
 ibutions.png>] [13]
 (./Decisions and Expected Value.aux) ) 
 Here is how much of TeX's memory you used:
- 4716 strings out of 493089
- 62017 string characters out of 6134842
- 260661 words of memory out of 5000000
- 8119 multiletter control sequences out of 15000+600000
+ 4839 strings out of 493089
+ 64090 string characters out of 6134842
+ 265057 words of memory out of 5000000
+ 8236 multiletter control sequences out of 15000+600000
  12801 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,8n,42p,1155b,1425s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,8n,42p,1155b,1424s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
@@ -579,10 +636,11 @@ sy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10
 .pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.p
 fb>
-Output written on "Decisions and Expected Value.pdf" (13 pages, 984465 bytes).
+Output written on "Decisions and Expected Value.pdf" (13 pages, 1177403 bytes).
+
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
+ 144 PDF objects out of 1000 (max. 8388607)
  89 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

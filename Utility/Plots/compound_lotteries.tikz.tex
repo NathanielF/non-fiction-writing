@@ -1,0 +1,56 @@
+
+% Set the overall layout of the tree
+\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=3.5cm]
+\tikzstyle{level 2}=[level distance=3.5cm, sibling distance=2cm]
+
+% Define styles for bags and leafs
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+
+% The sloped option gives rotated edge labels. Personally
+% I find sloped labels a bit difficult to read. Remove the sloped options
+% to get horizontal labels. 
+
+\begin{tikzpicture}[grow=down, sloped]
+\node[bag] {$[\frac{3}{7}Lot_{1}, \frac{4}{7}Lot_{2}]$}
+    child {
+        node[bag] {$[\frac{5}{9} g_{1}, \frac{4}{9} g_{2}]$}        
+            child {
+                node[end, label=
+                    {[xshift=0.0cm, yshift=0.0cm]$\Big[ g_{1}(\frac{4}{7}\cdot\frac{5}{9})$}] {}
+                edge from parent
+                node[above] {$g_{1}$}
+                node[below]  {$\frac{5}{9}$}
+            }
+            child {
+                node[end, label=
+                    {[xshift=0.0cm, yshift=0.0cm]$g_{2}(\frac{4}{7}\cdot\frac{4}{9}), $}] {}
+                edge from parent
+                node[above] {$g_{2}$}
+                node[below]  {$\frac{4}{9}$}
+            }
+            edge from parent 
+            node[above] {$Lot_{1}$}
+            node[below]  {$\frac{4}{7}$}
+    }
+    child {
+        node[bag] {$[\frac{6}{9}g_{3}, \frac{3}{9}g_{4}]$}        
+        child {
+                node[end, label=
+                    {[xshift=0.0cm, yshift=0.0cm]$g_{3}(\frac{3}{7}\cdot\frac{6}{9}),$}] {}
+                edge from parent
+                node[above] {$g_{3}$}
+                node[below]  {$\frac{6}{9}$}
+            }
+            child {
+                node[end, label=
+                    {[xshift=0.0cm, yshift=0.0cm]$g_{4}(\frac{3}{7}\cdot\frac{3}{9})  \Big] $}] {}
+                edge from parent
+                node[above] {$g_{4}$}
+                node[below]  {$\frac{3}{9}$}
+            }
+        edge from parent         
+            node[above] {$Lot_{2}$}
+            node[below]  {$\frac{3}{7}$}
+    };
+\end{tikzpicture}
