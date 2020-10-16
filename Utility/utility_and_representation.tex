@@ -198,12 +198,20 @@ then $\exists u_{p} : [ g_{1}, ... g_{n}] \mapsto \text{ Val } $ where
 $ u_{p}(Lot) = p_{1}u(g_{1}) + ... + p_{k}u(g_{k}) = E(u_{p}(Lot))$ and  $u(g_{1}) \geq u(g_{2}) \Leftrightarrow g_{1} \succeq g_{2}$ so that $u$ represents $\succeq$ unique up to a positive linear transformation.
 \end{ftheo}\footnote{We follow the example in: \cite{GameTheory}}
 
-\noindent For a well defined and fixed probability function $p$ over the goods $g_{1} ..... g_{n}$ the above constraints are sufficient to define a sensible utility function based on an agent's expressed preferences. The thought gives hope to the idea that you would be able to predict an individual's actions in any environment where you knew both their preferences and the objective probabilities at play. This is the basic model for understanding poker play, the probabilities are generally known and it just remains to determine the game theoretical dynamics. 
+\noindent For a well defined and fixed probability function $p$ over the goods $g_{1} ..... g_{n}$ the above axioms of rationality are sufficient to define a sensible utility function based on an agent's expressed preferences. The thought gives hope to the idea that you would be able to predict an individual's actions in any environment where you knew both their preferences and the objective probabilities at play. This is the basic model for understanding poker play - the probabilities are generally known and it just remains to determine the game theoretical dynamics.
 
 \section{Representation: Decision Under Uncertainty}
+There is an altogether different view of what we're doing when we pursue expected utility. Again, we may try to elicit an agent's utility function from their preferences, but in addition we can set up the axioms of rationality so as to derive a probability function based on the expressed desires. This is radically Bayesian in approach to what's going when we act to maximise expected utility. 
 
 \subsection*{From Neutrality to Desire}
-One of the issues with eliciting a utility curve with appeals to bets over lotteries stems from the stigma associated with gambling. An alternative approach, more in the spirit of Bayesian philosophy is to try to elicit the desirability of a prospect by situating it between two polarities and repeatedly seeking a third prospect midpoint between the two, which is half as desirable by construction. The method, originally proposed by Frand Ramsey relies on the idea of an "Ethically Neutral" proposition $Neutral$ - one which if it exists is such that for all other prospects $\alpha$ we're utterly indifferent between: $$(Neutral \wedge \alpha) \sim \alpha \sim (\neg Neutral \wedge \alpha)$$. \noindent The idea is that we can gauge desire by offers of repeatededly refined contracts based on an ethically neutral proposition. This sequence of offers can be used to construct a utility curve. First observe that 
+One of the issues with eliciting a utility curve with appeals to bets over lotteries stems from the stigma associated with gambling. An alternative approach, more in the spirit of Bayesian philosophy is to try to elicit the desirability of a prospect by situating it between two polarities and repeatedly seeking a third prospect, midpoint between the two, which is half as desirable by construction. The method, originally proposed by Frand Ramsey relies on the idea that we express preferences over a boolean algebra of propositions and we can gauge utility by appeal to an "Ethically Neutral" proposition $Neutral$ - one which if it exists is such that for all other prospects $\alpha$ we're utterly indifferent between: $$(Neutral \wedge \alpha) \sim \alpha \sim (\neg Neutral \wedge \alpha)$$. \noindent The idea is that we can gauge desire by offers of repeatedly refined contracts based on an ethically neutral proposition. This sequence of offers can be used to construct a utility curve. This is Bayesian in spirit because it allows for the expression of a probability measure for any proposition even if there is no known probability distribution over the considered outcomes. 
+\begin{marginfigure}
+\caption{Boolean Algebra of Propositions}%
+  \input{./Plots/boolean_algebra.tikz}
+  \label{fig:boolean_algebra}%
+\end{marginfigure}
+
+First observe that 
 
 \begin{equation}
 \begin{split}
@@ -233,7 +241,22 @@ Repeating this step we can find a contract on a sure-thing $\psi$ for which we'r
  \end{split}
 \end{equation}
 
-Repeating this process indefinitely we can refine our utility scale as exactly as we please. If these measures adhere to certain basic constraints of rationality regarding consistency of utility we can show how a Bayesian agent can be seen to maximise their expected utility when making decisions under uncertainty. But unlike the Von Neumann representation theorem for a Bayesian perspective the probability function over prospects is not unique, we can have multiple pairs $\langle p, u \rangle$ which are representative of an individual's preference ordering $\succeq$ without converging on the particular probabilities ascribed by one individual. This is precisely the content of the following theorem. 
+\begin{tikzpicture}
+% a straight line segment
+\draw (0.1,0) -- (10.5,0);
+% the ticks and their labels
+\foreach \x  in {0,...,10}
+  \draw[xshift=\x cm] (0pt,2pt) -- (0pt,-1pt) node[below,fill=white] {\the\numexpr\x*10\relax};
+% the thicker segment
+\draw[ultra thick] (5,0) -- (10,0);
+% the labels
+\node[fill=white,draw=black,circle,inner sep=2pt,label=above:{$o_1=\omega$}] at (0,0) {};
+\node[fill=white,draw=black,circle,inner sep=2pt,label=above:{$o_n=\alpha$}] at (10,0) {};
+\node at (5,-0.8) {$\gamma$};
+\node at (7.5,-0.8) {$\psi$};
+\end{tikzpicture}
+
+Repeating this process indefinitely we can refine our utility scale as exactly as we please, by repeatedly finding prospects with a utility precisely  on the mid-point the between two poles. If these measures adhere to certain basic constraints of rationality regarding consistency of utility we can show how a Bayesian agent can be seen to maximise their expected utility when making decisions under uncertainty. But unlike the Von Neumann representation theorem for a Bayesian perspective the probability function over prospects is not unique, we can have multiple pairs $\langle p, u \rangle$ which are representative of an individual's preference ordering $\succeq$ without converging on the particular probabilities ascribed by one individual. This is precisely the content of the following theorem. 
 
 \begin{ftheo}{Bolker Representation Theorem}
 \label{section:BolkersRepresentation}
@@ -263,13 +286,8 @@ The mathematical machinery used to prove this result is a little more involved, 
  $$= p(\alpha)u(\alpha) + u(\neg\alpha) - p(\alpha)u(\neg\alpha) $$
  $$ \Rightarrow u(\top) - u(\neg\alpha) = p(\alpha)u(\alpha)  - p(\alpha)u(\neg\alpha)$$
  $$ \Rightarrow p(\alpha) = \frac{u(\top) - u(\neg\alpha)}{ u(\alpha)  - u(\neg\alpha)} \text{  if } u(\alpha) \neq u(\neg\alpha) $$ 
-Which confirms how the relationship between probability of a given proposition can be expressed in terms of the desirability or utility of the same proposition and it's negation. 
-So $\alpha \sim \beta \succeq \top \succeq \neg\alpha \sim \neg\beta$
-\newline
+Which confirms how the relationship between probability of a given proposition can be expressed in terms of the desirability or utility of the same proposition and it's negation. This is a view of probability profoundly different from measure of risk we ascribe to poker players, it is not a fixed distribution determined by observation across repeated sampling. 
 
-\noindent The criteria of (Impartiality) and (Averaging) are less transparent. Averaging has some intuitive appeal if we consider two inconsistent propositions, say $\alpha$ = ``Arsenal win the Premier League'' and  $\beta$ =``Manchester United win the Premier League''.  If we're Arsenal fans is stands to reason that our preference $\alpha \succeq \beta$ should imply that we prefer the win  ($\alpha$) to the possibility ($\alpha \vee \beta)$ of the win over the loss ($\beta$).  
- 
-\noindent For impartiality the argument is a little different. Suppose $\alpha, \beta $ is as above but we're Chelsea supporters. Let $\gamma$ = ``Chelsea wins the Premier League'' then if you are indifferent between the possibilities $\alpha \vee \gamma \sim \beta \vee \gamma$ it must be because you consider $\alpha , \beta$ equally probable. Hence it follows that you should be indifferent between choices over disjunctions of $\alpha, \beta$ and any third choice $\gamma$. The importance of this axiom in the uniqueness proof stems from the fact that given one pair of propositions about which we're indifferent this supplies an explicit test for ranking propositions by probability and more generally the ratio of probabilities. From this ranking combined with the above axioms (A0 - A4) Jeffrey can infer the probability scale and a desirability measure from our preferences. 
 
 \bibliography{sample-handout}
 \bibliographystyle{plainnat}

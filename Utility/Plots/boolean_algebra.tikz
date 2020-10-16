@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+  \node (max) at (0,4) {$\top (1,1,1)$};
+  \node (a) at (-2,2) {$(0,1,1)\neg\alpha$};
+  \node (b) at (0,2) {$(1,0,1)\neg\beta$};
+  \node (c) at (2,2) {$(1,1,0)\neg\gamma$};
+  \node (d) at (-2,0) {$\gamma(0,0,1)$};
+  \node (e) at (0,0) {$\beta(0,1,0)$};
+  \node (f) at (2,0) {$\alpha(1,0,0)$};
+  \node (min) at (0,-2) {$\bot (0,0,0)$};
+  \draw (min) -- (d) -- (a) -- (max) -- (b) -- (f)
+  (e) -- (min) -- (f) -- (c) -- (max)
+  (d) -- (b);
+  \draw[preaction={draw=white, -,line width=6pt}] (a) -- (e) -- (c);
+\end{tikzpicture}
