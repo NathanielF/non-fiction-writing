@@ -1,0 +1,35 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{c+c1}{\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{} Build True Models}
+\PYGdefault{n}{N} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{100000}
+\PYGdefault{n}{X} \PYGdefault{o}{=} \PYGdefault{n}{random}\PYGdefault{o}{.}\PYGdefault{n}{uniform}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{20}\PYGdefault{p}{,} \PYGdefault{n}{N}\PYGdefault{p}{)}
+\PYGdefault{n}{independent\PYGdefaultZus{}err} \PYGdefault{o}{=} \PYGdefault{n}{random}\PYGdefault{o}{.}\PYGdefault{n}{normal}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{10}\PYGdefault{p}{,} \PYGdefault{n}{N}\PYGdefault{p}{)}
+\PYGdefault{n}{corr\PYGdefaultZus{}err} \PYGdefault{o}{=} \PYGdefault{n}{random}\PYGdefault{o}{.}\PYGdefault{n}{uniform} \PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{10}\PYGdefault{p}{)} \PYGdefault{o}{+}  \PYGdefault{n}{sin}\PYGdefault{p}{(}\PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{linspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{10}\PYGdefault{o}{*}\PYGdefault{n}{pi}\PYGdefault{p}{,} \PYGdefault{n}{N}\PYGdefault{p}{))} \PYGdefault{o}{+}
+\PYGdefault{n}{sin}\PYGdefault{p}{(}\PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{linspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{5}\PYGdefault{o}{*}\PYGdefault{n}{pi}\PYGdefault{p}{,} \PYGdefault{n}{N}\PYGdefault{p}{))}\PYGdefault{o}{**}\PYGdefault{l+m+mi}{2} \PYGdefault{o}{+}  \PYGdefault{n}{sin}\PYGdefault{p}{(}\PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{linspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{6}\PYGdefault{o}{*}\PYGdefault{n}{pi}\PYGdefault{p}{,} \PYGdefault{n}{N}\PYGdefault{p}{))}\PYGdefault{o}{**}\PYGdefault{l+m+mi}{2}
+
+\PYGdefault{n}{Y\PYGdefaultZus{}corr} \PYGdefault{o}{=} \PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{2} \PYGdefault{o}{+} \PYGdefault{l+m+mf}{3.5} \PYGdefault{o}{*} \PYGdefault{n}{X} \PYGdefault{o}{+} \PYGdefault{n}{corr\PYGdefaultZus{}err}
+\PYGdefault{n}{Y} \PYGdefault{o}{=} \PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{2} \PYGdefault{o}{+} \PYGdefault{l+m+mf}{3.5} \PYGdefault{o}{*} \PYGdefault{n}{X} \PYGdefault{o}{+} \PYGdefault{n}{independent\PYGdefaultZus{}err}
+
+\PYGdefault{n}{population} \PYGdefault{o}{=} \PYGdefault{n}{pd}\PYGdefault{o}{.}\PYGdefault{n}{DataFrame}\PYGdefault{p}{(\PYGdefaultZob{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}X\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{n}{X}\PYGdefault{p}{,}  \PYGdefault{l+s+s1}{\PYGdefaultZsq{}Y\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{n}{Y}\PYGdefault{p}{,} \PYGdefault{l+s+s1}{\PYGdefaultZsq{}Y\PYGdefaultZus{}corr\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{n}{Y\PYGdefaultZus{}corr}\PYGdefault{p}{\PYGdefaultZcb{})}
+
+\PYGdefault{c+c1}{\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{} Sample from Data}
+\PYGdefault{c+c1}{\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{} and build smaller models}
+
+\PYGdefault{n}{fits} \PYGdefault{o}{=} \PYGdefault{n}{DataFrame}\PYGdefault{p}{(}\PYGdefault{n}{columns}\PYGdefault{o}{=}\PYGdefault{p}{[}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}iid\PYGdefaultZus{}const\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s+s1}{\PYGdefaultZsq{}iid\PYGdefaultZus{}beta\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s+s1}{\PYGdefaultZsq{}corr\PYGdefaultZus{}const\PYGdefaultZsq{}}\PYGdefault{p}{,}
+ \PYGdefault{l+s+s1}{\PYGdefaultZsq{}corr\PYGdefaultZus{}beta\PYGdefaultZsq{}}\PYGdefault{p}{])}
+
+\PYGdefault{k}{for} \PYGdefault{n}{i} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{10000}\PYGdefault{p}{):}
+    \PYGdefault{n}{sample} \PYGdefault{o}{=} \PYGdefault{n}{population}\PYGdefault{o}{.}\PYGdefault{n}{sample}\PYGdefault{p}{(}\PYGdefault{n}{n}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{100}\PYGdefault{p}{,}
+    \PYGdefault{n}{replace}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{)}
+    \PYGdefault{n}{Y} \PYGdefault{o}{=} \PYGdefault{n}{sample}\PYGdefault{p}{[}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}Y\PYGdefaultZsq{}}\PYGdefault{p}{];} \PYGdefault{n}{X} \PYGdefault{o}{=} \PYGdefault{n}{sample}\PYGdefault{p}{[}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}X\PYGdefaultZsq{}}\PYGdefault{p}{]}
+    \PYGdefault{n}{Y\PYGdefaultZus{}corr} \PYGdefault{o}{=} \PYGdefault{n}{sample}\PYGdefault{p}{[}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}Y\PYGdefaultZus{}corr\PYGdefaultZsq{}}\PYGdefault{p}{]}
+    \PYGdefault{n}{X} \PYGdefault{o}{=} \PYGdefault{n}{add\PYGdefaultZus{}constant}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{)}
+    \PYGdefault{n}{iid\PYGdefaultZus{}model} \PYGdefault{o}{=} \PYGdefault{n}{OLS}\PYGdefault{p}{(}\PYGdefault{n}{Y}\PYGdefault{p}{,} \PYGdefault{n}{X}\PYGdefault{p}{)}
+    \PYGdefault{n}{results} \PYGdefault{o}{=} \PYGdefault{n}{iid\PYGdefaultZus{}model}\PYGdefault{o}{.}\PYGdefault{n}{fit}\PYGdefault{p}{()}
+    \PYGdefault{n}{corr\PYGdefaultZus{}model} \PYGdefault{o}{=} \PYGdefault{n}{OLS}\PYGdefault{p}{(}\PYGdefault{n}{Y\PYGdefaultZus{}corr}\PYGdefault{p}{,} \PYGdefault{n}{X}\PYGdefault{p}{)}
+    \PYGdefault{n}{results\PYGdefaultZus{}2} \PYGdefault{o}{=} \PYGdefault{n}{corr\PYGdefaultZus{}model}\PYGdefault{o}{.}\PYGdefault{n}{fit}\PYGdefault{p}{()}
+    \PYGdefault{n}{row} \PYGdefault{o}{=} \PYGdefault{p}{[}\PYGdefault{n}{results}\PYGdefault{o}{.}\PYGdefault{n}{params}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{],}  \PYGdefault{n}{results}\PYGdefault{o}{.}\PYGdefault{n}{params}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{],}
+           \PYGdefault{n}{results\PYGdefaultZus{}2}\PYGdefault{o}{.}\PYGdefault{n}{params}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{],} \PYGdefault{n}{results\PYGdefaultZus{}2}\PYGdefault{o}{.}\PYGdefault{n}{params}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]]}
+    \PYGdefault{n}{fits}\PYGdefault{o}{.}\PYGdefault{n}{loc}\PYGdefault{p}{[}\PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{fits}\PYGdefault{p}{)]} \PYGdefault{o}{=} \PYGdefault{n}{row}
+
+\PYGdefault{n}{fits}\PYGdefault{o}{.}\PYGdefault{n}{boxplot}\PYGdefault{p}{()}
+\end{Verbatim}
