@@ -482,6 +482,34 @@ Having arrayed all the ingredients of a consumer utility model and the tradition
 \subsection{Segmentation and Purity}
 There is a wide plurality of segmentation methods which can be applied to the task of classifying both customers and products. These classification schemas are vital inputs for any recommendation algorithm. They cluster individuals based on a wide array of features, which is to say that they simplify the question of expected action? Instead of asking how might Rebecca, (aged between 18-25, from Spain, with a history of frugal purchases) react to a new sales promotion, you can ask about the conversion rate of the young female demographic. Depending on the task and the nature of the clustering algorithm, you might end up bucketing Rebecca with Sven (overweight male, history of lavish spending from Sweden), if for example their historic email open rate were similar. The responsibility of vetting each clustering schema lies with the user of the algorithm, but usually knowledge of the problem is enough to put some kind of context on the structural patterns unearthed by the algorithm. 
 
+\begin{table}[htb]
+\centering
+\sffamily
+\caption*{Customer Features}
+\begin{tabular}{l*{4}{c}}
+\toprule
+ \bfseries Customer ID & \bfseries custDesc0 & \bfseries custDesc1 & \bfseries ... & \bfseries CustDescN \\
+\midrule
+\texttt{1}      & 3.2               & 4.5                 & ...                 & 10               \\
+\texttt{2}   & 5.2               & 4.3                 & ...                  & 8.2              \\
+\texttt{3} & 5.6              & 4.2                 & ....                & 8.5              \\
+\texttt{4}     & 7.5              & 4.6                 & ...                 & 12               \\ \bottomrule
+\end{tabular}
+\end{table}
+
+One of the first steps is to try to parse out our data into the most relevant descriptive features, but in lieu of domain knowledge we can apply apply some data compression techniques such as principle components analysis:
+
+\begin{marginfigure}
+\includegraphics[width=3in, height=5.in]{Plots/pca_explained_variance.png}
+\caption{Principle Component Analysis of Customer Features}
+\end{marginfigure}
+
+
+
+\end{document}
+
+
+
 
 
 \bibliography{sample-handout}

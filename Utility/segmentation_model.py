@@ -99,5 +99,35 @@ sample_silhouette_values = silhouette_samples(matrix, clusters)
 # and do the graph
 graph_component_silhouette(5, [-0.07, 1], len(X), sample_silhouette_values, clusters)
 
+from sklearn.preprocessing import StandardScaler
+X = df_customer[[x for x in df_purchases.columns if 'customer_desc' in x]]
+X_std = StandardScaler().fit_transform(X)
+## Covariance Decomposition
+cov_mat = np.cov(X_std.T)
+eig_vals, eig_vecs = np.linalg.eig(cov_mat)
 
+## Correlation Decomposition
+cor_mat1 = np.corrcoef(X_std.T)
+eig_vals, eig_vecs = np.linalg.eig(cor_mat1)
 
+## svd
+u,s,v = np.linalg.svd(X_std.T)
+u
+
+## Explained Variance
+tot = sum(eig_vals)
+var_exp = [(i / tot)*100 for i in sorted(eig_vals, reverse=True)]
+cum_var_exp = np.cumsum(var_exp)
+print(var_exp)
+print(cum_var_exp)
+
+plt.figure(figsize=(8, 8))
+
+plt.bar(range(len(var_exp)), var_exp, alpha=0.5, align='center',
+        label='individual explained variance')
+plt.step(range(len(cum_var_exp)), cum_var_exp, where='mid',
+         label='cumulative explained variance')
+plt.ylabel('Explained variance ratio')
+plt.xlabel('Principal components')
+plt.legend(loc='best')
+plt.tight_layout()
