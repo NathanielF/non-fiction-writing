@@ -1,0 +1,16 @@
+\contentsline {section}{\textbf {Expectations: The Workhorse}}{2}{section*.1}
+\contentsline {subsection}{Probability: Two sides of a Coin}{3}{subsection*.2}
+\contentsline {subsection}{Models, Errors and Sampling}{5}{subsection*.3}
+\contentsline {subsection}{Improper Assumptions and Skewed Expectations}{6}{subsection*.4}
+\contentsline {section}{\textbf {Small Worlds and Statistical Inference}}{7}{section*.5}
+\contentsline {subsection}{Frequentism: Inference from Expected Frequency}{8}{subsection*.6}
+\contentsline {subsection}{Bayesian Inference: Inference to Expectated Value}{9}{subsection*.7}
+\contentsline {subsection}{Big Data and Expected Returns}{9}{subsection*.8}
+\contentsline {section}{\textbf {The Stakes: From Utility to Indifference}}{11}{section*.9}
+\contentsline {subsection}{Optimising Utility}{12}{subsection*.10}
+\contentsline {section}{\textbf {Two Theorems: From Indifference to Utility}}{14}{section*.11}
+\contentsline {subsection}{Representation: Decision Under Risk}{14}{subsection*.12}
+\contentsline {subsection}{Representation: Decision Under Uncertainty}{15}{subsection*.13}
+\contentsline {section}{\textbf {Prospects for a Predictive consumer Utility model}}{18}{section*.14}
+\contentsline {subsection}{Segmentation and Purity}{19}{subsection*.15}
+\contentsfinish 
