@@ -1,16 +1,20 @@
-\contentsline {section}{\textbf {Expectations: The Workhorse}}{2}{section*.1}
-\contentsline {subsection}{Probability: Two sides of a Coin}{3}{subsection*.2}
-\contentsline {subsection}{Models, Errors and Sampling}{5}{subsection*.3}
-\contentsline {subsection}{Improper Assumptions and Skewed Expectations}{6}{subsection*.4}
-\contentsline {section}{\textbf {Small Worlds and Statistical Inference}}{7}{section*.5}
+\contentsline {section}{\textbf {Expected Value: Explanation and Target}}{2}{section*.1}
+\contentsline {section}{\textbf {Part I: Probability Measures}}{3}{section*.2}
+\contentsline {subsection}{Probability: Two sides of a Coin}{3}{subsection*.3}
+\contentsline {subsection}{Small Worlds and Statistical Inference}{5}{subsection*.4}
+\contentsline {subsection}{Modeling: Improper Assumptions and Skewed Expectations}{7}{subsection*.5}
 \contentsline {subsection}{Frequentism: Inference from Expected Frequency}{8}{subsection*.6}
-\contentsline {subsection}{Bayesian Inference: Inference to Expectated Value}{9}{subsection*.7}
-\contentsline {subsection}{Big Data and Expected Returns}{9}{subsection*.8}
-\contentsline {section}{\textbf {The Stakes: From Utility to Indifference}}{11}{section*.9}
-\contentsline {subsection}{Optimising Utility}{12}{subsection*.10}
-\contentsline {section}{\textbf {Two Theorems: From Indifference to Utility}}{14}{section*.11}
-\contentsline {subsection}{Representation: Decision Under Risk}{14}{subsection*.12}
-\contentsline {subsection}{Representation: Decision Under Uncertainty}{15}{subsection*.13}
-\contentsline {section}{\textbf {Prospects for a Predictive consumer Utility model}}{18}{section*.14}
-\contentsline {subsection}{Segmentation and Purity}{19}{subsection*.15}
+\contentsline {subsection}{Bayesian Inference: Inference to Expected Value}{9}{subsection*.7}
+\contentsline {subsection}{An Example: Expected Website Returns}{10}{subsection*.8}
+\contentsline {section}{\textbf {Part II: Utility Curves}}{12}{section*.9}
+\contentsline {subsection}{The Stakes: From Utility to Indifference}{12}{subsection*.10}
+\contentsline {subsection}{Optimising Utility}{13}{subsection*.11}
+\contentsline {section}{\textbf {Part III: Representation Theorems}}{14}{section*.12}
+\contentsline {subsection}{Rational Preference: From Indifference to Utility}{14}{subsection*.13}
+\contentsline {subsection}{Von Neumann-Morgernstern Representation: Decision Under Risk}{16}{subsection*.14}
+\contentsline {subsection}{Bolker-Jeffrey Representation: Decision Under Uncertainty}{17}{subsection*.15}
+\contentsline {section}{\textbf {Part IV: Machine Learning and the Customer}}{21}{section*.16}
+\contentsline {subsection}{Customer Representation: A Segmentation Approach}{21}{subsection*.17}
+\contentsline {subsection}{PCA and Segmentation}{21}{subsection*.18}
+\contentsline {section}{\textbf {Conclusion: Construct Criticism}}{24}{section*.19}
 \contentsfinish 

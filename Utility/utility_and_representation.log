@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.15)  4 OCT 2020 23:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.15)  12 JAN 2021 21:47
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -287,8 +287,9 @@ LaTeX Info: Redefining \cite on input line 694.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/natbib/bibentry.sty
 Package: bibentry 2007/10/30 1.5 (PWD)
 )
-No file utility_and_representation.bbl.
+(./utility_and_representation.bbl)
 \c@@tufte@num@bibkeys=\count107
+
 (/usr/local/texlive/2015/texmf-dist/tex/latex/sauerj/optparams.sty
 Package: optparams 2004/08/14 v0.9 multiple optional parameters in macros
 )
@@ -1237,7 +1238,13 @@ Library (tcolorbox): 'tcblistingscore.code.tex' version '3.60'
 )))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tcolorbox/tcbexternal.code.tex
 Library (tcolorbox): 'tcbexternal.code.tex' version '3.60'
-)) (/usr/local/texlive/2015/texmf-dist/tex/latex/mdframed/mdframed.sty
+)) (/usr/local/texlive/2015/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
+Package: stmaryrd 1994/03/03 St Mary's Road symbol package
+\symstmry=\mathgroup5
+LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
+(Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/mdframed/mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/zref-abspage.sty
@@ -1354,41 +1361,42 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \c@mdf@zref@counter=\count221
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
+Package hyperref Info: Option `colorlinks' set `true' on input line 35.
 \c@tcb@cnt@example=\count222
 
 (./utility_and_representation.aux)
 \openout1 = `utility_and_representation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 73.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 81.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 81.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Try loading font information for T1+pplj on input line 73.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Try loading font information for T1+pplj on input line 81.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1pplj.fd
 File: t1pplj.fd 2004/09/06 font definitions for T1/pplj.
 )
 \AtBeginShipoutBox=\box110
-Package hyperref Info: Link coloring OFF on input line 73.
+Package hyperref Info: Link coloring ON on input line 81.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1398,9 +1406,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count223
 )
-LaTeX Info: Redefining \ref on input line 73.
-LaTeX Info: Redefining \pageref on input line 73.
-LaTeX Info: Redefining \nameref on input line 73.
+LaTeX Info: Redefining \ref on input line 81.
+LaTeX Info: Redefining \pageref on input line 81.
+LaTeX Info: Redefining \nameref on input line 81.
 
 (./utility_and_representation.out) (./utility_and_representation.out)
 \@outlinefile=\write9
@@ -1408,7 +1416,7 @@ LaTeX Info: Redefining \nameref on input line 73.
 
 
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 73.
+LaTeX Info: Redefining \selectfont on input line 81.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1480,116 +1488,420 @@ Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks46
 \inpenc@posthook=\toks47
 )
-<Plots/utility_in_1_dimension.png, id=19, 462.528pt x 346.896pt>
-File: Plots/utility_in_1_dimension.png Graphic file (type png)
+(./utility_and_representation.toc
+LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <10> not available
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `T1/pplj/bx/it' in size <12> not available
+(Font)              Font shape `T1/pplj/b/it' tried instead on input line 1.
+)
+\tf@toc=\write10
+\openout10 = `utility_and_representation.toc'.
 
-<use Plots/utility_in_1_dimension.png>
-Package pdftex.def Info: Plots/utility_in_1_dimension.png used on input line 87
-.
-(pdftex.def)             Requested size: 216.80946pt x 162.60709pt.
+ [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-Overfull \hbox (72.80946pt too wide) in paragraph at lines 87--88
-[] 
- []
+]
+LaTeX Font Info:    Try loading font information for OT1+pplx on input line 88.
 
-<Plots/derivatives_of_utility.png, id=21, 462.528pt x 346.896pt>
-File: Plots/derivatives_of_utility.png Graphic file (type png)
-
-<use Plots/derivatives_of_utility.png>
-Package pdftex.def Info: Plots/derivatives_of_utility.png used on input line 89
-.
-(pdftex.def)             Requested size: 216.80946pt x 162.60709pt.
-
-Overfull \hbox (78.80946pt too wide) in paragraph at lines 89--90
-[][] 
- []
-
-LaTeX Font Info:    Try loading font information for OT1+pplx on input line 91.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pplx.fd
 File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 91.
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 88.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 91.
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 88.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 91.
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 88.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 91.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 88.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
-<Plots/cobb_douglas_utility.png, id=22, 462.528pt x 346.896pt>
+LaTeX Font Info:    Try loading font information for U+stmry on input line 88.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+Underfull \hbox (badness 10000) in paragraph at lines 88--90
+ 
+ []
+
+
+LaTeX Warning: Marginpar on page 2 moved.
+
+
+LaTeX Warning: Marginpar on page 2 moved.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--101
+ 
+ []
+
+[2]
+
+LaTeX Warning: Marginpar on page 3 moved.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+ 
+ []
+
+[3]
+<../Expectation/Plots/convergence_of_law_of_large_numbers.png, id=104, 462.528p
+t x 346.896pt>
+File: ../Expectation/Plots/convergence_of_law_of_large_numbers.png Graphic file
+ (type png)
+
+<use ../Expectation/Plots/convergence_of_law_of_large_numbers.png>
+Package pdftex.def Info: ../Expectation/Plots/convergence_of_law_of_large_numbe
+rs.png used on input line 113.
+(pdftex.def)             Requested size: 144.00325pt x 108.00244pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--120
+ 
+ []
+
+
+LaTeX Warning: Marginpar on page 4 moved.
+
+
+<../Expectation/Plots/variety_of_distributions.png, id=106, 462.528pt x 346.896
+pt>
+File: ../Expectation/Plots/variety_of_distributions.png Graphic file (type png)
+
+ <use ../Expectation/Plots/variety_of_distributions.png>
+Package pdftex.def Info: ../Expectation/Plots/variety_of_distributions.png used
+ on input line 120.
+(pdftex.def)             Requested size: 144.00325pt x 108.00244pt.
+ [4 <../Expectation/Plots/convergence_of_law_of_large_numbers.png> <../Expectat
+ion/Plots/variety_of_distributions.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 128--130
+ 
+ []
+
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 135--138
+ 
+ []
+
+
+<../Expectation/Plots/piecewise_linear_fits.png, id=122, 462.528pt x 346.896pt>
+File: ../Expectation/Plots/piecewise_linear_fits.png Graphic file (type png)
+<use ../Expectation/Plots/piecewise_linear_fits.png>
+Package pdftex.def Info: ../Expectation/Plots/piecewise_linear_fits.png used on
+ input line 138.
+(pdftex.def)             Requested size: 144.00325pt x 108.00244pt.
+
+
+LaTeX Warning: Marginpar on page 6 moved.
+
+[6 <../Expectation/Plots/piecewise_linear_fits.png>]
+\openout3 = `utility_and_representation.pyg'.
+
+
+(./_minted-utility_and_representation/7BE2487F77649620CB0BDA8C060A7ACBEFA80C7D6
+05FD1F1904E6D8081BBEF6D.pygtex
+LaTeX Font Info:    Font shape `T1/fvm/m/it' in size <10> not available
+(Font)              Font shape `T1/fvm/m/sl' tried instead on input line 2.
+LaTeX Font Info:    Font shape `T1/fvm/m/sl' will be
+(Font)              scaled to size 8.50006pt on input line 2.
+LaTeX Font Info:    Font shape `T1/fvm/bx/n' in size <10> not available
+(Font)              Font shape `T1/fvm/b/n' tried instead on input line 20.
+LaTeX Font Info:    Font shape `T1/fvm/b/n' will be
+(Font)              scaled to size 8.50006pt on input line 20.
+ [7])
+<../Expectation/Plots/distribution_of_beta1.png, id=139, 462.528pt x 346.896pt>
+File: ../Expectation/Plots/distribution_of_beta1.png Graphic file (type png)
+<use ../Expectation/Plots/distribution_of_beta1.png>
+Package pdftex.def Info: ../Expectation/Plots/distribution_of_beta1.png used on
+ input line 186.
+(pdftex.def)             Requested size: 144.00325pt x 108.00244pt.
+
+
+LaTeX Warning: Marginpar on page 8 moved.
+
+<../Expectation/Plots/errors_dist_iid.png, id=140, 462.528pt x 346.896pt>
+File: ../Expectation/Plots/errors_dist_iid.png Graphic file (type png)
+
+<use ../Expectation/Plots/errors_dist_iid.png>
+Package pdftex.def Info: ../Expectation/Plots/errors_dist_iid.png used on input
+ line 194.
+(pdftex.def)             Requested size: 150.99734pt x 113.248pt.
+
+<../Expectation/Plots/correlated_errors_dist.png, id=141, 462.528pt x 346.896pt
+>
+File: ../Expectation/Plots/correlated_errors_dist.png Graphic file (type png)
+ <use ../Expectation/Plots/correlated_errors_dist.png>
+Package pdftex.def Info: ../Expectation/Plots/correlated_errors_dist.png used o
+n input line 195.
+(pdftex.def)             Requested size: 150.99734pt x 113.248pt.
+
+
+LaTeX Warning: Marginpar on page 8 moved.
+
+[8 <../Expectation/Plots/distribution_of_beta1.png> <../Expectation/Plots/error
+s_dist_iid.png> <../Expectation/Plots/correlated_errors_dist.png>]
+<../Expectation/Plots/binomial_test.png, id=153, 462.528pt x 346.896pt>
+File: ../Expectation/Plots/binomial_test.png Graphic file (type png)
+
+<use ../Expectation/Plots/binomial_test.png>
+Package pdftex.def Info: ../Expectation/Plots/binomial_test.png used on input l
+ine 210.
+(pdftex.def)             Requested size: 144.00325pt x 108.00244pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--217
+ 
+ []
+
+
+LaTeX Warning: Marginpar on page 9 moved.
+
+[9 <../Expectation/Plots/binomial_test.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--237
+\T1/pplj/m/n/10 ex-am-ple. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--237
+ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--240
+ 
+ []
+
+[10]
+<../Expectation/Plots/outcomes_of_signup.png, id=165, 462.528pt x 346.896pt>
+File: ../Expectation/Plots/outcomes_of_signup.png Graphic file (type png)
+
+<use ../Expectation/Plots/outcomes_of_signup.png>
+Package pdftex.def Info: ../Expectation/Plots/outcomes_of_signup.png used on in
+put line 242.
+(pdftex.def)             Requested size: 144.00325pt x 108.00244pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--248
+\T1/pplj/m/n/10 8) for the next 20 days: 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--248
+ 
+ []
+
+
+<../Expectation/Plots/outcomes_of_signup_post.png, id=166, 462.528pt x 346.896p
+t>
+File: ../Expectation/Plots/outcomes_of_signup_post.png Graphic file (type png)
+ <use ../Expectation/Plots/outcomes_of_signup_post.png>
+Package pdftex.def Info: ../Expectation/Plots/outcomes_of_signup_post.png used 
+on input line 250.
+(pdftex.def)             Requested size: 144.00325pt x 108.00244pt.
+
+
+LaTeX Warning: Marginpar on page 11 moved.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--256
+\T1/pplj/m/n/10 our data us-ing Bayes Rule. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--256
+ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--259
+\T1/pplj/m/n/10 can pos-i-tively bias our ex-pec-ta-tions. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--259
+ 
+ []
+
+
+<../Expectation/Plots/expected_revenue_distributions.png, id=167, 462.528pt x 3
+46.896pt>
+File: ../Expectation/Plots/expected_revenue_distributions.png Graphic file (typ
+e png)
+ <use ../Expectation/Plots/expected_revenue_distributions.png>
+Package pdftex.def Info: ../Expectation/Plots/expected_revenue_distributions.pn
+g used on input line 261.
+(pdftex.def)             Requested size: 144.00325pt x 108.00244pt.
+
+[11 <../Expectation/Plots/outcomes_of_signup.png> <../Expectation/Plots/outcome
+s_of_signup_post.png> <../Expectation/Plots/expected_revenue_distributions.png>
+] <Plots/utility_in_1_dimension.png, id=178, 462.528pt x 346.896pt>
+File: Plots/utility_in_1_dimension.png Graphic file (type png)
+
+<use Plots/utility_in_1_dimension.png>
+Package pdftex.def Info: Plots/utility_in_1_dimension.png used on input line 26
+8.
+(pdftex.def)             Requested size: 216.80946pt x 162.60709pt.
+
+Overfull \hbox (72.80946pt too wide) in paragraph at lines 268--269
+[] 
+ []
+
+<Plots/derivatives_of_utility.png, id=179, 462.528pt x 346.896pt>
+File: Plots/derivatives_of_utility.png Graphic file (type png)
+
+<use Plots/derivatives_of_utility.png>
+Package pdftex.def Info: Plots/derivatives_of_utility.png used on input line 27
+0.
+(pdftex.def)             Requested size: 216.80946pt x 162.60709pt.
+
+Overfull \hbox (78.80946pt too wide) in paragraph at lines 270--271
+[][] 
+ []
+
+
+LaTeX Warning: Marginpar on page 12 moved.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+ 
+ []
+
+<Plots/cobb_douglas_utility.png, id=180, 462.528pt x 346.896pt>
 File: Plots/cobb_douglas_utility.png Graphic file (type png)
 
 <use Plots/cobb_douglas_utility.png>
-Package pdftex.def Info: Plots/cobb_douglas_utility.png used on input line 102.
+Package pdftex.def Info: Plots/cobb_douglas_utility.png used on input line 290.
 
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-Overfull \hbox (87.26343pt too wide) in paragraph at lines 102--103
+Overfull \hbox (87.26343pt too wide) in paragraph at lines 290--291
 [] 
  []
 
-
-LaTeX Warning: Marginpar on page 1 moved.
-
-[1
-
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Plots
-/utility_in_1_dimension.png> <./Plots/derivatives_of_utility.png> <./Plots/cobb
-_douglas_utility.png>]
-<Plots/indifference_curves.png, id=42, 462.528pt x 346.896pt>
+[12 <./Plots/utility_in_1_dimension.png> <./Plots/derivatives_of_utility.png> <
+./Plots/cobb_douglas_utility.png>]
+<Plots/indifference_curves.png, id=192, 462.528pt x 346.896pt>
 File: Plots/indifference_curves.png Graphic file (type png)
 
 <use Plots/indifference_curves.png>
-Package pdftex.def Info: Plots/indifference_curves.png used on input line 112.
+Package pdftex.def Info: Plots/indifference_curves.png used on input line 304.
 (pdftex.def)             Requested size: 216.80946pt x 162.60709pt.
 
-Overfull \hbox (72.80946pt too wide) in paragraph at lines 112--113
+Overfull \hbox (72.80946pt too wide) in paragraph at lines 304--305
 [] 
  []
 
-<Plots/indifference_curves_budget.png, id=43, 462.528pt x 346.896pt>
+<Plots/indifference_curves_budget.png, id=193, 462.528pt x 346.896pt>
 File: Plots/indifference_curves_budget.png Graphic file (type png)
 
 <use Plots/indifference_curves_budget.png>
 Package pdftex.def Info: Plots/indifference_curves_budget.png used on input lin
-e 127.
+e 319.
 (pdftex.def)             Requested size: 216.80946pt x 162.60709pt.
 
-Overfull \hbox (72.80946pt too wide) in paragraph at lines 127--128
+Overfull \hbox (72.80946pt too wide) in paragraph at lines 319--320
 [] 
  []
 
-LaTeX Font Info:    Try loading font information for T1+phv on input line 136.
+
+LaTeX Warning: Marginpar on page 13 moved.
+
+LaTeX Font Info:    Try loading font information for T1+phv on input line 326.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 136.
+(Font)              scaled to size 8.99994pt on input line 326.
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--156
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
 \T1/pplj/m/n/10 The same pat-tern holds for cases with more than two goods. We 
 can ex-press the value of given
  []
 
-[2 <./Plots/indifference_curves.png> <./Plots/indifference_curves_budget.png>]
-[3] (./Plots/compound_lotteries.tikz.tex
+[13 <./Plots/indifference_curves.png> <./Plots/indifference_curves_budget.png>]
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 372--375
+[]\T1/pplj/m/n/10 Let $\OML/zplm/m/it/10 R$ \T1/pplj/m/n/10 de-note a bi-nary r
+e-la-tion over a set of states $\OML/zplm/m/it/10 S$\T1/pplj/m/n/10 . We can pl
+ace a va-ri-ety of con-di-tions on the $\OML/zplm/m/it/10 R$
+ []
+
+LaTeX Font Info:    Try loading font information for TS1+pplj on input line 375
+.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ts1pplj.fd
+File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 385--387
+[]\T1/pplj/b/n/10 Definition: (In-di-vid-ual Pref-er-ence Struc-ture ) $\OMS/zp
+lm/m/n/10 h\OML/zplm/m/it/10 S\OT1/pplx/m/n/10 , \OMS/zplm/m/n/10 ^^W\OT1/pplx/
+m/n/10 , \OMS/zplm/m/n/10 ^^_\OT1/pplx/m/n/10 , \OMS/zplm/m/n/10 ^^Xi$ \T1/pplj
+/m/n/10 is a (re-la-tional) struc-ture
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--387
+\T1/pplj/m/n/10 where $\OMS/zplm/m/n/10 ^^W$ \T1/pplj/m/n/10 is a weak pref-er-
+ence or-der-ing on the set $\OML/zplm/m/it/10 S$ \T1/pplj/m/n/10 if $\OMS/zplm/
+m/n/10 ^^W$ \T1/pplj/m/n/10 is a tran-si-tive, re-flex-ive and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--387
+\T1/pplj/m/n/10 com-plete. While $\OMS/zplm/m/n/10 ^^_$ \T1/pplj/m/n/10 is a st
+rict pref-er-ence or-der-ing if $[]$.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--387
+\T1/pplj/m/n/10 Fi-nally, we have $\OMS/zplm/m/n/10 ^^X$ \T1/pplj/m/n/10 as an 
+in-dif-fer-ence re-la-tion if $[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--387
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--390
+[]\T1/pplj/b/n/10 Definition: (Choice Func-tions) \T1/pplj/m/n/10 We let $\OML/
+zplm/m/it/10 C$ \T1/pplj/m/n/10 be a choice func-tion when $[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--390
+\T1/pplj/m/n/10 just when $[]$. For ex-am-ple we have a choice func-tion with
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--390
+\T1/pplj/m/n/10 re-spect to a pref-er-ence struc-ture when $[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--390
+
+ []
+
+[15] (./Plots/compound_lotteries.tikz.tex
 Overfull \hbox (17.32515pt too wide) in paragraph at lines 15--16
  [][][][]$\OT1/zplm/m/n/8 [[]\OML/zplm/m/it/8 Lot[]\OT1/pplx/m/n/8 , []\OML/zpl
 m/m/it/8 Lot[]\OT1/zplm/m/n/8 ]$ 
@@ -1608,131 +1920,318 @@ m/it/8 g[]\OT1/zplm/m/n/8 ]$
  []
 
 )
-Overfull \hbox (58.88187pt too wide) in paragraph at lines 56--188
+Overfull \hbox (58.88187pt too wide) in paragraph at lines 56--408
 [][] 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 190.
-LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <10> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 190.
+Package mdframed Info: mdframed works in twoside mode on input line 410.
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
+Underfull \hbox (badness 10000) in paragraph at lines 411--412
 []\T1/pplj/m/it/10 If an in-di-vid-ual i's
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+Underfull \hbox (badness 10000) in paragraph at lines 414--415
 []\T1/pplj/m/it/10 (Reduction of Com-pound lot-ter-ies): Each com-pound lot-ter
 y
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+Underfull \hbox (badness 10000) in paragraph at lines 414--415
 []$ \T1/pplj/m/it/10 re-duces to a sim-ple lot-tery where each good
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+Underfull \hbox (badness 10000) in paragraph at lines 414--415
 \OT1/zplm/m/n/10 (\OT1/pplx/m/n/10 1, ..\OML/zplm/m/it/10 k\OT1/zplm/m/n/10 )$ 
 \T1/pplj/m/it/10 is weighted across all branches of the nested de-ci-sion tree
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+Underfull \hbox (badness 10000) in paragraph at lines 414--415
 []$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
-\T1/pplj/m/it/10 by the usual rules of prob-a-bil-ity for branch-ing com-pound 
-events
+Underfull \hbox (badness 10000) in paragraph at lines 414--415
+\T1/pplj/m/it/10 by the usual rules of con-di-tional prob-a-bil-ity for branch-
+ing events
  []
 
-[4]
 
-Package natbib Warning: Citation `GameTheory' undefined on input line 199.
+LaTeX Warning: Marginpar on page 16 moved.
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 424--426
+\T1/pplj/m/n/10 strength of the be-lief. 
+ []
 
 
-LaTeX Warning: Marginpar on page 5 moved.
+Underfull \hbox (badness 10000) in paragraph at lines 424--426
+ 
+ []
 
-[5]
-Package mdframed Info: mdframed works in twoside mode on input line 238.
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 240
+
+LaTeX Warning: Marginpar on page 17 moved.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 448--449
+[]\T1/pplj/b/n/10 Example: \T1/pplj/m/n/10 The clas-si-cal propo-si-tional cal-
+cu-lus forms a boolean al-ge-bra where the el-e-ments $[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 448--449
+\T1/pplj/m/n/10 are in-ter-preted as Truth and Fal-sity. The set of well-formed
+ for-mu-las of propo-si-tional logic are:
+ []
+
+[17] (./Plots/boolean_algebra.tikz)
+Overfull \hbox (17.18233pt too wide) in paragraph at lines 14--464
+[][] 
+ []
+
+[18]
+Overfull \hbox (21.10641pt too wide) in paragraph at lines 509--510
+[][]  
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 513.
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 515
 .
- (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 )
-Underfull \hbox (badness 1248) in paragraph at lines 240--242
+Underfull \hbox (badness 1248) in paragraph at lines 515--517
 []\T1/pplj/m/it/10 Let $\U/fplmbb/m/n/10 B \OT1/zplm/m/n/10 = \OMS/zplm/m/n/10 
 h\OT1/zplm/m/n/10 
 \OT1/pplx/m/n/10 , \OMS/zplm/m/n/10 ^^Wi$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--242
+Underfull \hbox (badness 10000) in paragraph at lines 515--517
 \T1/pplj/m/it/10 be Bolker struc-ture if $\OT1/zplm/m/n/10 
 $ \T1/pplj/m/it/10 is an atom-less Boolean al-ge-bra and $\OMS/zplm/m/n/10 j[]\
 OT1/zplm/m/n/10 =$ \T1/pplj/m/it/10 forms an
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--242
+Underfull \hbox (badness 10000) in paragraph at lines 515--517
 \T1/pplj/m/it/10 im-pli-ca-tion re-la-tion over $\OT1/zplm/m/n/10 
 $\T1/pplj/m/it/10 , while $\OMS/zplm/m/n/10 ^^W$ \T1/pplj/m/it/10 is com-plete,
  tran-si-tive, con-tin-u-ous
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--247
+Underfull \hbox (badness 10000) in paragraph at lines 520--522
 \T1/pplj/m/it/10 Then there is a prob-a-bil-ity mea-sure and util-ity (de-sir-a
 bil-ity) met-ric
  []
 
-LaTeX Font Info:    Try loading font information for TS1+pplj on input line 247
-.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ts1pplj.fd
-File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 251--252
+
+Underfull \hbox (badness 10000) in paragraph at lines 526--527
 []\T1/pplj/m/it/10 (A4) $[]$ im-plies
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--257
+Underfull \hbox (badness 10000) in paragraph at lines 531--532
 []\T1/pplj/m/it/10 and there is an-other such set of func-tions $\OMS/zplm/m/n/
 10 h\OML/zplm/m/it/10 p[]\OT1/pplx/m/n/10 , \OML/zplm/m/it/10 u[]\OMS/zplm/m/n/
 10 i$ \T1/pplj/m/it/10 if and only
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--257
+Underfull \hbox (badness 10000) in paragraph at lines 531--532
 \T1/pplj/m/it/10 if $\OML/zplm/m/it/10 u[]$ \T1/pplj/m/it/10 is a frac-tional l
 in-ear trans-for-ma-tion of $\OML/zplm/m/it/10 u$ \T1/pplj/m/it/10 i.e. $[]$ an
 d
  []
 
-[6] [7]
-No file utility_and_representation.bbl.
+[19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 547--549
+ 
+ []
 
-Package natbib Warning: There were undefined citations.
 
-[8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 279.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 279.
- (./utility_and_representation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 279.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 279.
+LaTeX Warning: Marginpar on page 21 moved.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 553--555
+ 
+ []
+
+[21]
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 562.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 8.99994pt on input line 562.
+ <Plots/pca_explained_variance.png, id=262, 925.056pt x 552.1428pt>
+File: Plots/pca_explained_variance.png Graphic file (type png)
+
+<use Plots/pca_explained_variance.png>
+Package pdftex.def Info: Plots/pca_explained_variance.png used on input line 57
+7.
+(pdftex.def)             Requested size: 216.80946pt x 129.40814pt.
+
+Overfull \hbox (72.80946pt too wide) in paragraph at lines 577--578
+[] 
+ []
+
+\openout3 = `utility_and_representation.pyg'.
+
+
+(./_minted-utility_and_representation/3423808272A583D4B553B39EC4B90784EFA80C7D6
+05FD1F1904E6D8081BBEF6D.pygtex [22 <./Plots/pca_explained_variance.png>])
+<Plots/pca_component_weights.png, id=271, 925.056pt x 552.1428pt>
+File: Plots/pca_component_weights.png Graphic file (type png)
+
+<use Plots/pca_component_weights.png>
+Package pdftex.def Info: Plots/pca_component_weights.png used on input line 597
+.
+(pdftex.def)             Requested size: 216.80946pt x 129.40814pt.
+
+Overfull \hbox (72.80946pt too wide) in paragraph at lines 597--598
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 601--603
+ 
+ []
+
+<Plots/pca_representing_clusters.png, id=272, 462.528pt x 346.896pt>
+File: Plots/pca_representing_clusters.png Graphic file (type png)
+
+<use Plots/pca_representing_clusters.png>
+Package pdftex.def Info: Plots/pca_representing_clusters.png used on input line
+ 605.
+(pdftex.def)             Requested size: 216.80946pt x 162.60709pt.
+
+Overfull \hbox (72.80946pt too wide) in paragraph at lines 605--606
+[] 
+ []
+
+[23 <./Plots/pca_component_weights.png> <./Plots/pca_representing_clusters.png>
+] <Plots/silhouette_scores.png, id=281, 502.2765pt x 492.8814pt>
+File: Plots/silhouette_scores.png Graphic file (type png)
+
+<use Plots/silhouette_scores.png>
+Package pdftex.def Info: Plots/silhouette_scores.png used on input line 615.
+(pdftex.def)             Requested size: 216.81007pt x 212.75462pt.
+
+Overfull \hbox (72.81007pt too wide) in paragraph at lines 615--616
+[] 
+ []
+
+
+LaTeX Warning: Marginpar on page 24 moved.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 622--624
+\T1/pplj/m/n/10 less for-mula. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 622--624
+ 
+ []
+
+
+LaTeX Warning: Marginpar on page 24 moved.
+
+[24 <./Plots/silhouette_scores.png>] (./utility_and_representation.bblpdfTeX wa
+rning (ext4): destination with the same identifier (name{cite.angrist_mostly_20
+08}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.8 ...ist and Pischke(2008)]{angrist_mostly_2008}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{cite.BarberBR_ML}) has been already used, 
+duplicate ignored
+<to be read again> 
+                   \relax 
+l.13 \bibitem[Barber(2012)]{BarberBR_ML}
+                                        pdfTeX warning (ext4): destination with
+ the same identifier (name{cite.BinmoreRational}) has been already used, duplic
+ate ignored
+<to be read again> 
+                   \relax 
+l.18 \bibitem[Binmore(2011)]{BinmoreRational}
+                                             pdfTeX warning (ext4): destination
+ with the same identifier (name{cite.cox2006pos}) has been already used, duplic
+ate ignored
+<to be read again> 
+                   \relax 
+l.23 \bibitem[Cox(2006)]{cox2006pos}
+                                    pdfTeX warning (ext4): destination with the
+ same identifier (name{cite.freedman_2009}) has been already used, duplicate ig
+nored
+<to be read again> 
+                   \relax 
+l.28 \bibitem[Freedman(2009)]{freedman_2009}
+                                            pdfTeX warning (ext4): destination 
+with the same identifier (name{cite.HackingEmergence}) has been already used, d
+uplicate ignored
+<to be read again> 
+                   \relax 
+l.34 \bibitem[Hacking(2006)]{HackingEmergence}
+                                              pdfTeX warning (ext4): destinatio
+n with the same identifier (name{cite.HalpernReasoning}) has been already used,
+ duplicate ignored
+<to be read again> 
+                   \relax 
+l.40 \bibitem[Halpern(2005)]{HalpernReasoning}
+                                              pdfTeX warning (ext4): destinatio
+n with the same identifier (name{cite.JeffreyDecision}) has been already used, 
+duplicate ignored
+<to be read again> 
+                   \relax 
+l.45 \bibitem[Jeffrey(1983)]{JeffreyDecision}
+                                             pdfTeX warning (ext4): destination
+ with the same identifier (name{cite.luce1989games}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.50 ...item[Luce and Raiffa(1989)]{luce1989games}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{cite.MeehlTheoretical}) has been already u
+sed, duplicate ignored
+<to be read again> 
+                   \relax 
+l.55 \bibitem[Meehl(1978)]{MeehlTheoretical}
+                                            pdfTeX warning (ext4): destination 
+with the same identifier (name{cite.savage54}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.61 \bibitem[Savage(1954)]{savage54}
+                                     pdfTeX warning (ext4): destination with th
+e same identifier (name{cite.stigler2016seven}) has been already used, duplicat
+e ignored
+<to be read again> 
+                   \relax 
+l.66 \bibitem[Stigler(2016)]{stigler2016seven}
+                                              )
+runsystem(rm "utility_and_representation.pyg")...executed.
+
+ [25] [26]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 631.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 631.
+
+(./utility_and_representation.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 631.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 631.
 Package rerunfilecheck Info: File `utility_and_representation.out' has not chan
 ged.
-(rerunfilecheck)             Checksum: 6E84B62514095A0EC51694208BDABC28;684.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 279.
+(rerunfilecheck)             Checksum: 394089C1FFE87A8AF84FBD7950BCDFB0;1305.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 631.
  ) 
 Here is how much of TeX's memory you used:
- 36691 strings out of 493089
- 699567 string characters out of 6134842
- 930950 words of memory out of 5000000
- 39496 multiletter control sequences out of 15000+600000
- 75886 words of font info for 126 fonts, out of 8000000 for 9000
+ 37175 strings out of 493089
+ 709005 string characters out of 6134842
+ 936473 words of memory out of 5000000
+ 39857 multiletter control sequences out of 15000+600000
+ 86502 words of font info for 149 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,17n,101p,10440b,1265s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -1745,14 +2244,20 @@ exmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2015/texmf-dist
 /fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2015/texmf-dist/fon
 ts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
-/public/fpl/fplrij8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/he
-lvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palatino/
-uplb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palatino/uplr8a.
-pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on utility_and_representation.pdf (8 pages, 563613 bytes).
+/public/fpl/fplrij8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public
+/bera/fvmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/bera/fv
+mr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/bera/fvmro8a.pf
+b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/l
+ocal/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on utility_and_representation.pdf (26 pages, 1861584 bytes).
 PDF statistics:
- 153 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
- 1086 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 385 PDF objects out of 1000 (max. 8388607)
+ 277 compressed objects within 3 object streams
+ 93 named destinations out of 1000 (max. 500000)
+ 1180 words of extra memory for PDF output out of 10000 (max. 10000000)
 

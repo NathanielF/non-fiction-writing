@@ -1,0 +1,71 @@
+\begin{thebibliography}{12}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Angrist and Pischke(2008)]{angrist_mostly_2008}
+Joshua~D. Angrist and Jörn-Steffen Pischke.
+\newblock \emph{Mostly Harmless Econometrics: An Empiricist's Companion}.
+\newblock Princeton University Press, 2008.
+
+\bibitem[Barber(2012)]{BarberBR_ML}
+David Barber.
+\newblock \emph{Bayesian Reasoning and Machine Learning}.
+\newblock Cambridge University Press, 2012.
+
+\bibitem[Binmore(2011)]{BinmoreRational}
+Ken Binmore.
+\newblock \emph{Rational Decisions}.
+\newblock Princeton, 2011.
+
+\bibitem[Cox(2006)]{cox2006pos}
+David~R. Cox.
+\newblock \emph{Principles of Statistical Inference}.
+\newblock Cambridge University Press, 2006.
+
+\bibitem[Freedman(2009)]{freedman_2009}
+David~A. Freedman.
+\newblock \emph{Statistical Models and Causal Inference: A Dialogue with the
+  Social Sciences}.
+\newblock Cambridge University Press, 2009.
+
+\bibitem[Hacking(2006)]{HackingEmergence}
+Ian Hacking.
+\newblock \emph{The Emergence of Probability: A Philosophical Study of Early
+  Ideas about Probability, Induction and Statistical Inference}.
+\newblock Cambridge University Press, 2 edition, 2006.
+
+\bibitem[Halpern(2005)]{HalpernReasoning}
+Joseph~Y. Halpern.
+\newblock \emph{Reasoning about uncertainty}.
+\newblock {MIT} Press, 2005.
+
+\bibitem[Jeffrey(1983)]{JeffreyDecision}
+Richard~C. Jeffrey.
+\newblock \emph{The Logic of Decision}.
+\newblock University of Chicago Press, 1983.
+
+\bibitem[Luce and Raiffa(1989)]{luce1989games}
+R.D. Luce and H.~Raiffa.
+\newblock \emph{Games and Decisions: Introduction and Critical Survey}.
+\newblock Dover Publications, 1989.
+
+\bibitem[Meehl(1978)]{MeehlTheoretical}
+Paul~E Meehl.
+\newblock Theoretical risks and tabular asterisks: Sir karl, sir ronald, and
+  the slow progress of soft psychology.
+\newblock \emph{Journal of Consulting and Clinical Psychology}, 46, 1978.
+
+\bibitem[Savage(1954)]{savage54}
+L.~Savage.
+\newblock \emph{The Foundations of Statistics}.
+\newblock Wiley, 1954.
+
+\bibitem[Stigler(2016)]{stigler2016seven}
+S.M. Stigler.
+\newblock \emph{The Seven Pillars of Statistical Wisdom}.
+\newblock Harvard University Press, 2016.
+
+\end{thebibliography}

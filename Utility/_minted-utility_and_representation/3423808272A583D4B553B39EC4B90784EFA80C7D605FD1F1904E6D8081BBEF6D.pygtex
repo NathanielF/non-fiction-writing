@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{n}{X} \PYGdefault{o}{=} \PYGdefault{n}{df\PYGdefaultZus{}customer}\PYGdefault{p}{[[}\PYGdefault{n}{x} \PYGdefault{k}{for} \PYGdefault{n}{x} \PYGdefault{o+ow}{in} \PYGdefault{n}{df\PYGdefaultZus{}purchases}\PYGdefault{o}{.}\PYGdefault{n}{columns}
+\PYGdefault{k}{if} \PYGdefault{l+s+s1}{\PYGdefaultZsq{}customer\PYGdefaultZus{}desc\PYGdefaultZsq{}} \PYGdefault{o+ow}{in} \PYGdefault{n}{x}\PYGdefault{p}{]]}
+\PYGdefault{n}{X\PYGdefaultZus{}std} \PYGdefault{o}{=} \PYGdefault{n}{StandardScaler}\PYGdefault{p}{()}\PYGdefault{o}{.}\PYGdefault{n}{fit\PYGdefaultZus{}transform}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{)}
+\PYGdefault{c+c1}{\PYGdefaultZsh{}\PYGdefaultZsh{} Covariance Decomposition}
+\PYGdefault{n}{cov\PYGdefaultZus{}mat} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{cov}\PYGdefault{p}{(}\PYGdefault{n}{X\PYGdefaultZus{}std}\PYGdefault{o}{.}\PYGdefault{n}{T}\PYGdefault{p}{)}
+\PYGdefault{n}{eig\PYGdefaultZus{}vals}\PYGdefault{p}{,} \PYGdefault{n}{eig\PYGdefaultZus{}vecs} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{linalg}\PYGdefault{o}{.}\PYGdefault{n}{eig}\PYGdefault{p}{(}\PYGdefault{n}{cov\PYGdefaultZus{}mat}\PYGdefault{p}{)}
+\PYGdefault{c+c1}{\PYGdefaultZsh{}\PYGdefaultZsh{} Explained Variance}
+\PYGdefault{n}{tot} \PYGdefault{o}{=} \PYGdefault{n+nb}{sum}\PYGdefault{p}{(}\PYGdefault{n}{eig\PYGdefaultZus{}vals}\PYGdefault{p}{)}
+\PYGdefault{n}{var\PYGdefaultZus{}exp} \PYGdefault{o}{=} \PYGdefault{p}{[(}\PYGdefault{n}{i} \PYGdefault{o}{/} \PYGdefault{n}{tot}\PYGdefault{p}{)}\PYGdefault{o}{*}\PYGdefault{l+m+mi}{100} \PYGdefault{k}{for} \PYGdefault{n}{i} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{sorted}\PYGdefault{p}{(}\PYGdefault{n}{eig\PYGdefaultZus{}vals}\PYGdefault{p}{,} \PYGdefault{n}{reverse}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{)]}
+\PYGdefault{n}{cum\PYGdefaultZus{}var\PYGdefaultZus{}exp} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{cumsum}\PYGdefault{p}{(}\PYGdefault{n}{var\PYGdefaultZus{}exp}\PYGdefault{p}{)}
+\end{Verbatim}

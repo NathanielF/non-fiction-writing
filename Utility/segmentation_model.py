@@ -101,6 +101,25 @@ graph_component_silhouette(5, [-0.07, 1], len(X), sample_silhouette_values, clus
 
 from sklearn.preprocessing import StandardScaler
 X = df_customer[[x for x in df_purchases.columns if 'customer_desc' in x]]
+kmeans = KMeans(init='k-means++', n_clusters=3, n_init=30)
+kmeans.fit(X)
+clusters = kmeans.predict(X)
+X['cluster'] = clusters
+from sklearn.decomposition import PCA as sklearnPCA
+sklearn_pca = sklearnPCA(n_components=2)
+Y_pca = pd.DataFrame(sklearn_pca.fit_transform(X[[col for col in X.columns if
+                                         not 'cluster' in col]]))
+X = pd.concat([X, Y_pca], axis=1)
+X[[0, 1, 'cluster']].plot.scatter(x=0,
+                      y=1,
+                      c='cluster',
+                      colormap='viridis')
+plt.title("Principle Components Representation - Coloured by inferred Clusters")
+plt.ylabel("Principle Component 1")
+plt.xlabel("Principle Component 2")
+plt.style.use('default')
+plt.show()
+
 X_std = StandardScaler().fit_transform(X)
 ## Covariance Decomposition
 cov_mat = np.cov(X_std.T)
@@ -131,3 +150,40 @@ plt.ylabel('Explained variance ratio')
 plt.xlabel('Principal components')
 plt.legend(loc='best')
 plt.tight_layout()
+plt.style.use('default')
+
+def myplot(score,coeff,labels=None):
+    xs = score[:,0]
+    ys = score[:,1]
+    n = coeff.shape[0]
+    scalex = 1.0/(xs.max() - xs.min())
+    scaley = 1.0/(ys.max() - ys.min())
+    plt.scatter(xs * scalex,ys * scaley, c = y)
+    for i in range(n):
+        plt.arrow(0, 0, coeff[i,0], coeff[i,1],color = 'r',alpha = 0.5)
+        if labels is None:
+            plt.text(coeff[i,0]* 1.15, coeff[i,1] * 1.15, "Var"+str(i+1), color = 'g', ha = 'center', va = 'center')
+        else:
+            plt.text(coeff[i,0]* 1.15, coeff[i,1] * 1.15, labels[i], color = 'g', ha = 'center', va = 'center')
+    plt.xlim(-1,1)
+    plt.ylim(-1,1)
+    plt.xlabel("PC{}".format(1))
+    plt.ylabel("PC{}".format(2))
+    plt.grid()
+
+#Call the function. Use only the 2 PCs.
+myplot(X[[0, 1]],np.transpose(sklearn_pca.components_[0:2, :]))
+plt.show()
+
+import seaborn as sns
+ax = sns.heatmap(sklearn_pca.components_,
+                 cmap='YlGnBu',
+                 yticklabels=[ "PCA"+str(x) for x in range(1,sklearn_pca.n_components_+1)],
+                 xticklabels=['customer_desc_0', 'customer_desc_1', 'customer_desc_2',
+       'customer_desc_3', 'customer_desc_4', 'customer_desc_5',
+       'customer_desc_6', 'customer_desc_7'],
+                 #cbar_kws={"orientation": "horizontal"}
+                 )
+ax.set_aspect("equal")
+plt.title("Component Weightings of the original observable variables")
+plt.style.use('default')
